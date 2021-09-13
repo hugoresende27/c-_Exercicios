@@ -18,10 +18,10 @@ int main ()
 	//seed para random number generator
 	srand(seed);
 	
-	num1 =  1 + rand() % 100; //gera numero aleatório de 0 a 100
+	num1 =  1 + rand() % 100; //gera numero aleatï¿½rio de 0 a 100
 	num2 =  1 + rand() % 100;
 	total_certo=num1+num2;
-	cout<<setw(15)<<num1<<endl;  //setw(5) é um estilo, nr de espaços 
+	cout<<setw(15)<<num1<<endl;  //setw(5) ï¿½ um estilo, nr de espaï¿½os 
 	cout<<setw(13)<<" + "<<num2<<endl;	
 	cout<<setw(18)<<"------\n";
 	cin>>total_user;
@@ -29,7 +29,7 @@ int main ()
 	if (total_user==total_certo)
 		cout<<"Exelente!!!"<<endl;
 	else
-		cout<<"Está errado...o certo seria "<<total_certo<<endl;
+		cout<<"EstÃ¡ errado...o certo seria "<<total_certo<<endl;
 	
 	return 0;
 }
