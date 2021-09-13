@@ -30,6 +30,7 @@ int main ()
 		cout<<"Exelente!!!"<<endl;
 	else
 		cout<<"Está errado...o certo seria "<<total_certo<<endl;
+
 	
 	return 0;
 }
