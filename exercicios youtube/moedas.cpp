@@ -12,8 +12,8 @@ using namespace std;
 int main ()
 {
     
-    setlocale(LC_ALL, "pt_BR"); // also try "pt_BR"
-    //setlocale(LC_ALL,"Portuguese");
+    //setlocale(LC_ALL, "pt_BR"); // also try "pt_BR"
+    setlocale(LC_ALL,"Portuguese");
     int cent5,cent10,cent20,cent50;
     double total=0;
 

@@ -8,7 +8,7 @@ using namespace std;
 
 int main ()
 {
-	setlocale (LC_ALL,"Portuguese");
+	setlocale (LC_ALL,"portuguese");
 	int num1,num2;
 	int total_certo,total_user;
 	
