@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
+#include<iostream>
 
 
 main ()
@@ -37,5 +38,6 @@ main ()
 				printf ("dia inválido");
 				break;
 		}
-			
-		}
+	system("pause");
+	return 0;			
+}
