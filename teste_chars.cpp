@@ -5,7 +5,7 @@ using namespace std;
 int main(void)
 {
     setlocale(LC_ALL, "Portuguese"); // also try "pt_BR"
-    //wprintf("Bem-Vindo ao CALCULADORA SIMULATOR 2018 - FOSáRIO EDITION\n");
+    //wprintf("Bem-Vindo ao CALCULADORA SIMULATOR 2018 - FOSï¿½RIO EDITION\n");
     
-    cout << "Téstando Âcéntos";
+    cout << "TÃªstando ï¿½cï¿½ntos";
 }
