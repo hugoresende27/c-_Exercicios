@@ -9,15 +9,18 @@ using namespace std;
 int main ()
 {
 	//setlocale (LC_ALL,"pt_BR");
-	int cota=2500;
-	float aumento=0.04;
-	int nova_cota=0;
+	
+	const float AUMENTO=0.04;
+	const int ANOS=6;
+	float cota=2500;
+	
+	
 	cout<<"Cota de membros 2.500 EUROS/ANO\nAumento de 4% ao ano"<<endl;
-	for (int i=1;i<=6;i++)
+	for (int i=1;i<=ANOS;i++)
 	{
-		nova_cota=cota*aumento+cota;
-		cout<<"No ANO "<<i<<" o valor da anuidade vai ser de "<<nova_cota<<" EUROS"<<endl;
-		cota=nova_cota;
+		cota=cota*AUMENTO+cota;
+		cout<<"No ANO "<<i<<" o valor da anuidade vai ser de "<<cota<<" EUROS"<<endl;
+		
 	}
 	system("pause");
 	return 0;
