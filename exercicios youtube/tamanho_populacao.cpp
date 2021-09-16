@@ -8,11 +8,10 @@ using namespace std;
 int main ()
 {
 	setlocale (LC_ALL,"Portuguese");
-	int organismos=0;
-	float taxa_cre=0;
+	float organismos=0.0f;
+	float taxa_cre=0.0f;
 	int dias=0;
-	int organismos_dia=0;
-	
+	float organismos_dia=0.0f;
 	while (organismos<2)
 	{
 		cout<<"Quantos organismos? (minimo 2)--> ";
@@ -32,17 +31,17 @@ int main ()
 		cin>>dias;
 	}
 	
-	taxa_cre=taxa_cre/100;
-	
-	
 	
 	for (int i=1;i<=dias;i++)
-	{
-		organismos_dia+=i*organismos;
+	{																		
+		organismos_dia=((taxa_cre/100)*organismos)+organismos;
+											
 		cout<<"Dia "<<i<<" Organismos-> "<<organismos_dia<<endl;
+		
+		organismos=organismos_dia;		// var organismos, que tem o valor total da populacao recebe o valor da var orga_dia
 	}
 	cout<<"TOTAL ORGANISMOS:: "<<organismos<<endl;
-	cout<<"TAXA CRESCIMENTO:: "<<taxa_cre<<endl;
+	cout<<"TAXA CRESCIMENTO:: "<<taxa_cre<<" %"<<endl;
 	cout<<"DIAS:: "<<dias<<endl;
 	
 	
