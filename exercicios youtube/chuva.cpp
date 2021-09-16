@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <string>
 #include <locale>
+#include <iomanip>
 
 using namespace std;
 
@@ -26,12 +27,18 @@ int main ()
 			{
 				cout<<"ANO "<<i<<"--MES "<<j<<"--> chuva:: ";
 				cin>>chuva;
-				chuva+=chuva;
+				while (chuva<0)
+				{
+					cout<<"ANO "<<i<<"--MES "<<j<<"--> chuva(positivo):: ";
+					cin>>chuva;
+				}
+				total_chuva+=chuva;
 			}
 		}
 	meses=anos*12;		
-	media=chuva/meses;
-	cout<<"Total de meses:: "<<meses<<"\nTotal de chuva:: "<<chuva;
+	media=total_chuva/meses;
+	cout<<"Total de meses:: "<<meses<<"\nTotal de chuva:: "<<total_chuva<<endl;
+	cout<<"Media chuva: "<<setprecision(2)<<fixed<<total_chuva/meses<<endl;
 	cout<<"\nA media foi de "<<media<<"%";
 	printf ("\nMedia %.2f %\n",media);
 	system("pause");

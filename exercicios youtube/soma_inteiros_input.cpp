@@ -21,16 +21,24 @@ int main ()
 	
 	for (int i=1;i<=num;i++)
 	{	
-	/*	if (i==num)
-		{
-			cout<<" = ";
-		}	*/
-	
 		resultado+=i;
-		//cout<<resultado<<" + ";	
-		
+		if (i==num)
+		{
+			
+			cout<<" = "<<resultado;	
+			break;
+		}
+		if (i==1)
+		{
+			cout<<resultado;
+		}
+		else
+		{
+			cout<<" + "<<resultado;		
+		}
+	
 	}
-	cout<<"total "<<resultado<<endl;
+	cout<<"\ntotal "<<resultado<<endl;
 
 	system("pause");
 	return 0;
