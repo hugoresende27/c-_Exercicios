@@ -6,8 +6,8 @@
 using namespace std;
 
 
-double calculoRetail (double,double);			//chamada funcao calculoRetail, uma vez q a funcao esta escrita depois do main
-
+double calculoRetail (double,double);		//prototype::chamada funcao calculoRetail, uma vez q a funcao esta escrita depois do main
+												
 int main ()
 {
 	setlocale (LC_ALL,"Portuguese");
