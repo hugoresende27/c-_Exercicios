@@ -56,34 +56,34 @@ int numAcidente(string cidade)
 	
 }
 
-void menosA (int figueira, int porto, int coimbra, int lisboa, int faro )	//funcao void, sem retorno, 5 parametros tipo int, valor de 
+void menosA (int fig, int por, int coi, int lis, int far )	//funcao void, sem retorno, 5 parametros tipo int, valor de 
 {																			//acidentes de cada cidade
 	int menor=0;
 	string cid="";
 	
-	if (figueira<porto && figueira<coimbra && figueira<lisboa && figueira<faro )
+	if (fig<por && fig<coi && fig<lis && fig<far )
 	{
-		menor=figueira;
+		menor=fig;
 		cid="Figueira da Foz";
 	}
-	else if (porto<figueira && porto<coimbra && porto<lisboa && porto < faro )
+	else if (por<fig && por<coi && por<lis && por < far )
 	{
-		menor=porto;
+		menor=por;
 		cid="Porto";
 	}
-	else if (coimbra<figueira && coimbra<porto && coimbra<lisboa && coimbra < faro )
+	else if (coi<fig && coi<por && coi<lis && coi < far )
 	{
-		menor=coimbra;
+		menor=coi;
 		cid="Coimbra";
 	}
-	else if (lisboa<figueira && lisboa<porto && lisboa<coimbra && lisboa < faro )
+	else if (lis<fig && lis<por && lis<coi && lis < far )
 	{
-		menor=lisboa;
+		menor=lis;
 		cid="Lisboa";
 	}
 	else 
 	{
-		menor=faro;
+		menor=far;
 		cid="Faro";
 	}
 	cout<<"A cidade com menos acidentes foi a cidade de "<<cid<<" com o total de "<<menor<<" acidentes\n\n";
