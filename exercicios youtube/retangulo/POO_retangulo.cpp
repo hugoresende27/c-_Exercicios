@@ -20,7 +20,7 @@ Retangulo::Retangulo(double a,double c){
 	
 }
 
-void Retangulo::lerAltura(double a)
+void Retangulo::defAltura(double a)
 {
 	if (a>0)
 	altura=a;
@@ -31,7 +31,7 @@ void Retangulo::lerAltura(double a)
 	}
 }
 
-void Retangulo::lerComp(double c)
+void Retangulo::defComp(double c)
 {
 	if (c>0)
 	comp=c;
