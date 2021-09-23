@@ -10,14 +10,31 @@ int main ()
 	setlocale (LC_ALL,"Portuguese");
 	int numRandom=7;
 	int aposta;
+	int limite=3;
+	int contador=1;
+	bool perdeu=false;
 	
-	do
+while (aposta!=numRandom && !perdeu)
 	{
-		cout<<"Insira o numero::";
-		cin>>aposta;	
-	}while (aposta!=numRandom);
+		if (contador<=3 )
+		{
+			cout<<"Insira o numero (jogada "<<contador<<")::";
+			cin>>aposta;	
+			contador++;
+		} 
+		else
+		{
+			perdeu=true;
+		}
+	}
+	if (perdeu)
+	{
+		cout<<"PERDEU! \n";
+	} else {
+		cout<<"VENCEDOR"<<endl;;
+	}
 	
-	cout<<"VENCEDOR"<<endl;;
+	
 
 	system("pause");
 	return 0;
