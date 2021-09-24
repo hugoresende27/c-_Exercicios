@@ -30,11 +30,9 @@ int main ()
 	{
 		funcaoLower(palavra);
 	}
-	
-	
+		
 	cout<<palavra<<endl;
 	
-
 	system("pause");
 	return 0;
 }
