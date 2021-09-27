@@ -13,16 +13,14 @@ using namespace std;
 int main ()
 {
 	setlocale (LC_ALL,"Portuguese");
-	int num,soma;
-	
+	int num,soma=0;
 	cout<<"Programa soma pares ate n\nAte quanto queres a soma dos pares?->";
 	cin>>num;	
-	
-	for (int i=0;i<num;i++)
+	for (int i=2;i<num;i+=2)
 	{
-		if (num%2==0)
-		
+			soma+=i;
 	}
+	cout<<"Soma dos pares:: "<<soma<<endl;
 	
 	system("pause");
 	return 0;
