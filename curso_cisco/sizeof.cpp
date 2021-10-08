@@ -20,7 +20,7 @@ int main()
     printf ("double tem %i bytes\n",sizeof(d));
     printf ("bool tem %i bytes\n",sizeof(b));
     printf ("char tem %i bytes\n",sizeof(c));
-
+    cout<<"-A Ão nè né ";
     
     system("pause");				
 	return 0;	
