@@ -20,6 +20,7 @@ int main()
     printf ("double tem %i bytes\n",sizeof(d));
     printf ("bool tem %i bytes\n",sizeof(b));
     printf ("char tem %i bytes\n",sizeof(c));
+
     
     system("pause");				
 	return 0;	
