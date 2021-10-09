@@ -23,20 +23,20 @@ int main()
     }
     do
     {
-        troca=false;
-        for (int i=0;i<qtd-1;i++)
+        troca=false;            //troca falsa para começar
+        for (int i=0;i<qtd-1;i++)   //loop para percorrer o vetor
         {
-            if (numeros[i]>numeros[i+1])
+            if (numeros[i]>numeros[i+1])    //testa se o indice é maior q o indice seguinte
             {
-                troca=true;
-                int m=numeros[i];
-                numeros[i]=numeros[i+1];
-                numeros[i+1]=m;
-            }
-         
+                troca=true;         //se for, troca true
+                int m=numeros[i];   //m como variável auxiliar, recebe primeiro indice
+                numeros[i]=numeros[i+1];//primeiro indice recebe o indice da frente, que é maior
+                numeros[i+1]=m; //indice da frente recebe valor q estava no primeiro indice
+            }                   //valor do primeiro indice foi guardado numa var auxiliar, bolha, 
+                                //ficou guardado lá em cima
         }
    
-    } while (troca);
+    } while (troca);    //enquanto troca for verdadeira
     
     printf("\n\t-------ARRAY ORDENADO-----\n");
     for (int i=0;i<qtd;i++)
