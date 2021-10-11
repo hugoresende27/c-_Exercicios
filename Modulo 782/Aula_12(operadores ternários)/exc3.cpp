@@ -1,10 +1,12 @@
 #include <iostream>
 #include <string.h>
+#include <locale.h>
 #define MAX 10
 using namespace std;
 
 int main ()
 {
+    setlocale(LC_ALL, "Portuguese");
 	char nome[MAX];
     char situacao[MAX]=" ";//se não for inicializada, ao concatenar com "Aprovado" ou "Reprovado" pode trazer lixo, dados de outro lado
     float nota;

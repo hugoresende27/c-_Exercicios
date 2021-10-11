@@ -2,10 +2,10 @@
 using namespace std;
 
 
-int main()								//função main é a função principal do programa, por onde ele inicia
+int main()								//funï¿½ï¿½o main ï¿½ a funï¿½ï¿½o principal do programa, por onde ele inicia
 {
 	setlocale (LC_ALL,"Portuguese");
-	cout<<"Olá Hugo!!"<<endl; 			//cout para imprimir no ecrã, endl para quebra de linha
+	cout<<"OlÃ¡ Hugo!!"<<endl; 			//cout para imprimir no ecrï¿½, endl para quebra de linha
 	cout<<"Linguagem C"<<endl;
 	for (int i = 0; i < 3; i++)		//ciclo for
     {
@@ -17,9 +17,9 @@ int main()								//função main é a função principal do programa, por onde ele i
 
 /*
 
-comentario várias linhas  
-indentar, por às escadinhas xD
-Este ficheiro é o ficheiro fonte (source) -> cpp
-Existe tbm o ficheiro .exe, o executável próprio para o processador do pc entender
+comentario vï¿½rias linhas  
+indentar, por ï¿½s escadinhas xD
+Este ficheiro ï¿½ o ficheiro fonte (source) -> cpp
+Existe tbm o ficheiro .exe, o executï¿½vel prï¿½prio para o processador do pc entender
 
 */                                                                                    
