@@ -11,25 +11,24 @@ int main()
     scanf ("%d",&b);
     printf ("Insira o valor C:: ");
     scanf ("%d",&c);
-
     if ( a > b && a > c)
     {
         cout << "O maior é o A-->" << a << endl;
     }
-    else if ( b > a && b > c)
-    {
-        cout << "O maior é o B-->" << b << endl;
-    }
-    else if ( c > a && c > b)
-    {
-         cout << "O maior é o C-->" << c << endl;
-    }
-    
+    else
+        if ( b > a && b > c)
+            {
+                cout << "O maior é o B-->" << b << endl;
+            }
+    else 
+        if ( c > a && c > b)
+            {
+                cout << "O maior é o C-->" << c << endl;
+            }  
     else 
     {
         cout << "Existem valores iguais\n";
-    }
-    
+    }   
     cout << "A::" << a << endl;
     cout << "B::" << b << endl;
     cout << "C::" << c << endl;
