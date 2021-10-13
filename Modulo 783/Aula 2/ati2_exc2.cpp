@@ -15,6 +15,7 @@ int main()
         cout << "Valor MAIOR do que 10\n";
     }
     else
+    {
         if (num<10)
         {
             cout << "Valor MENOR do que 10\n";
@@ -23,6 +24,7 @@ int main()
         {
             cout << "Valor igual a 10\n";
         }
+    }
 
        
     system ("pause");
