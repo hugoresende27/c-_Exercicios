@@ -21,31 +21,37 @@ class Aluno
         media=m;
     }
     //contrutor
-    Aluno () {};
+    Aluno(){};
 
-    friend ostream & operator << (ostream &saida, Aluno &a)     //sobrecarga do operador << função tem de ser friend para ser possivel aceder aos dados private do aluno
+    friend ostream & operator << (ostream &saida, const Aluno &a)     //sobrecarga do operador << função tem de ser friend para ser possivel aceder aos dados private do aluno
     {
         saida << a.nome << "\n" << a.idade << "\n" << a.media << "\n";
         return saida;
+    }
+    friend istream & operator >> (istream &in, Aluno &a)        //sobrecarga operador >>
+    {
+        in >> a.nome;
+        in >> a.idade;
+        in >> a.media;
+        return in;
     }
 };
 
 int main()								
 {
     list <Aluno> lista_alunos;      //instanciar/criar uma lista do tipo Aluno
-    Aluno a("Teresa", 31, 15.7);
-    Aluno b("José", 25, 10.3);
-    Aluno c("Rita", 27, 12.1);
-    lista_alunos.push_back(a);      //inserir os objetos na lista com o uso do push_back()
-    lista_alunos.push_back(b);
-    lista_alunos.push_back(c);
-
-    ofstream escrever("alunos.txt");
+    ifstream in ("alunos.txt");     //ler os dados do ficheiro e passar para a lista
+    Aluno a;
+    while (!in.eof())       //ler a lista 
+    {
+        in>>a;      //sobrecarga do operador de entrada
+            lista_alunos.push_back(a);
+    }
+    lista_alunos.pop_back();//pop_back() para remover ultimo aluno q guardou repetidademente
 
     for (list <Aluno>::iterator i= lista_alunos.begin(); i != lista_alunos.end(); i++) //ciclo for com iterador list<Aluno>::iterator
     {
         cout << *i <<endl;      //aqui uso a sobrecarga do operador de saida << mostra os dados na consola
-        escrever << *i;         //cria um ficheiro com os dados dos alunos
     }
 
     system("pause");				
