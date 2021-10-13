@@ -42,4 +42,11 @@ int main()
     cout << pop() << endl;
     cout << pop() << endl;
     */
+
+   Stack pequeno,outro,fun;
+   pequeno.push(1);     //pequeno recebe 1
+   outro.push(pequeno.pop()+1); //outro recebe +1 mas mantêm 1, logo = 2
+   fun.push(outro.pop()+2);     //recebe +2 com 2 = 4
+
+   cout << fun.pop() << endl;
 }
