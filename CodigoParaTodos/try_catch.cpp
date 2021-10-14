@@ -15,7 +15,7 @@ int main()
     try
     {
         v.at(0)=50;     //substitui o vetor no indice 0 pelo valor 50
-        //v.at(5)=50; //como não existe o indice 5, vai dar o catch, ocorreu uma exepção mas não para o código
+        //v.at(5)=50; //como não existe o indice 5, vai dar o catch, ocorreu uma exepção mas não pára o código
     }
     catch (exception& e)
     {
