@@ -31,14 +31,28 @@ int main()
     for (int i=0;i<3;i++)
     {
         printf ("------------------------------------------\n");
-        printf ("Altura :: %f",vetorAltura[i]);
+        printf ("Altura :: %.2f",vetorAltura[i]);
         printf ("\tSexo :: %c \n",vetorSexo[i]);
     }
 
     for (int i=0;i<3;i++)
     {
-       // if 
+        if (i==0)
+        {
+            alturaMax = vetorAltura[i];
+            alturaMin = vetorAltura[i];
+        }
+        if (vetorAltura[i]>alturaMax)
+        {
+            alturaMax=vetorAltura[i];
+        }
+        if (vetorAltura[i]<alturaMin)
+        {
+            alturaMin = vetorAltura[i];
+        }
     }
+    cout << "A altura maxima vai ser "<<alturaMax<<endl;
+    cout << "A altura minima vai ser "<<alturaMin<<endl;
 
 
     system("pause");				
