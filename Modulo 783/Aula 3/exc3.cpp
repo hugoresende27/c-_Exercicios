@@ -58,6 +58,7 @@ int main()
     preco_iva= iva + preco_base;
 
     cout << "O produto "<<nome<<" com o preço base de "<<fixed << setprecision(2)<< preco_base<<"€ taxa de IVA "<<tipo_taxa<<" vai custar "<<fixed << setprecision(2)<<preco_iva<<"€\n O IVA vai ser de "<<fixed<<setprecision(2)<<iva<<"€\n";
+
     if (pode_estragar)
         cout << "Validade de "<<validade<<" dias"<<endl;
     else
