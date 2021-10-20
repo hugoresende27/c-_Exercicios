@@ -6,13 +6,14 @@ Altere o programa anterior de modo a que verifique se o produto é perecível (p
 */
 #include <iostream>	
 #include<string.h>
+#include<iomanip>
 using namespace std;
 
 
 int main()								
 {
     char nome [20],tipo_taxa[12],estraga;
-    float preco_base,preco_iva;
+    float preco_base,preco_iva,iva;
     int taxa,validade;
     bool pode_estragar=false;
     cout << "Qual o nome do produto? --> ";
@@ -40,22 +41,23 @@ int main()
     {
     case 1:
         strcpy(tipo_taxa,"REDUZIDA"); 
-        preco_iva= (preco_base*0.06) + preco_base;
+        iva = preco_base*0.06;
         break;
     case 2:
         strcpy(tipo_taxa,"INTERMÉDIA"); 
-        preco_iva= (preco_base*0.13) + preco_base;
+        iva = preco_base*0.13;
         break;
     case 3:
         strcpy(tipo_taxa,"NORMAL"); 
-        preco_iva= (preco_base*0.23) + preco_base;
+        iva = preco_base*0.23;
         break;
     default:
         cout << "Opção inválida\n";
         break;
     }
+    preco_iva= iva + preco_base;
 
-    cout << "O produto "<<nome<<" com o preço base de "<<preco_base<<"€ taxa de IVA "<<tipo_taxa<<" vai custar "<<preco_iva<<"€\n";
+    cout << "O produto "<<nome<<" com o preço base de "<<fixed << setprecision(2)<< preco_base<<"€ taxa de IVA "<<tipo_taxa<<" vai custar "<<fixed << setprecision(2)<<preco_iva<<"€\n O IVA vai ser de "<<fixed<<setprecision(2)<<iva<<"€\n";
     if (pode_estragar)
         cout << "Validade de "<<validade<<" dias"<<endl;
     else
