@@ -17,7 +17,7 @@ int main()
     float vetorAltura[10];
     char vetorSexo[10];
     float alturaMax,alturaMin;
-    cout << sizeof(vetorAltura);
+    //cout << sizeof(vetorAltura);
     for (int i=0 ; i< 3 ; i++)
     {
         printf ("Qual a altura do elemento [%d]--> ",i+1);
