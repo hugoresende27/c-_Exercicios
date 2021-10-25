@@ -87,6 +87,7 @@ int main()
                 matriz3();
                 break;
             case 3:
+            	printf ("code by hugo resende@2021");
                 exit(0);
                 break;
             default:
