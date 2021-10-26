@@ -29,7 +29,7 @@ int main()
         {
             if (vetorA[i]==vetorB[j])
                 {
-                    vetorS[i]=vetorA[i];
+                    vetorS[contador]=vetorA[i];
                     contador++;
                 }
         }
