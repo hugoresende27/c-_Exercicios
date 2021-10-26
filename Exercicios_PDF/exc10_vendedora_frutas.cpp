@@ -25,12 +25,35 @@ int main()
     }while (vendas_dia<=10 || vendas_dia>=1000);
 
     printf ("VENDAS DO DIA:: %d \n",vendas_dia);
+
     float pesos[vendas_dia];
+    float media,soma=0,maior=0,menor=0;
+
     for (int i=0;i<vendas_dia;i++)
     {
-        printf ("Insira o peso da venda %d",i);
+       
+        maior=menor=pesos[0];
+        printf ("Insira o peso da venda %d --> ",i);
         scanf ("%f",&pesos[i]);
+        soma+=pesos[i];
+        if (pesos[i]>maior)
+        {
+            maior = pesos[i];
+        }
+        if (pesos[i]<menor)
+        {
+            menor = pesos[i];
+        }
     }
+    
+    for (int i=0;i<vendas_dia;i++)
+    {
+        printf (":%.2f:\n",pesos[i]);
+    }
+
+    media = soma/vendas_dia;
+    printf ("A media vai ser %.2f o maior foi %.2f e o menor %.2f\n", media, maior, menor);
+    printf ("Total do dia %.2f Euros", soma*4.35);
     system("pause");				
 	return 0;	
 }
