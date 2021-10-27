@@ -19,8 +19,9 @@ int main()
     {
         for (int j=0;j<MAX;j++)
         {
-            printf ("\n\tmatriz :: %d\n",matriz[i][j]);
+            printf ("[%d]",matriz[i][j]);
         }
+        printf ("\n");
     }
 
     system("pause");				
