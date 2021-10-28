@@ -27,22 +27,34 @@ using namespace std;
 
 char tab[10]={'O','1','2','3','4','5','6','7','8','9'};
 
+
 void tabuleiro()
 {
     system("cls");
     printf ("\n\t\t*********** JOGO DO GALO *********\n");
-    printf ("    |    |  \n");
-    printf ("  %c | %c  | %c \n",tab[1],tab[2],tab[3]);
-    printf ("____|____|____\n");
-
+    printf ("    |    |      \n");
+    printf ("  %c | %c  | %c   \n",tab[1],tab[2],tab[3]);
+    printf (" ___|____|____  \n");
+    printf ("    |    |      \n");
+    printf ("  %c | %c  | %c   \n",tab[4],tab[5],tab[6]);
+    printf (" ___|____|____  \n");
+    printf ("    |    |      \n");
+    printf ("  %c | %c  | %c   \n",tab[7],tab[8],tab[9]);
 }
+
+
 
 
 int main()								
 {
     
-
+    string jog1,jog2;
     tabuleiro();
+    printf ("Nome do jogador 1--> ");
+    scanf ("%s",jog1);
+    printf ("Nome do jogador 2--> ");
+    scanf ("%s",jog2);
+    printf *(@)
     system("pause");				
 	return 0;	
 }
