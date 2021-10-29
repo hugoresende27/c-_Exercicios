@@ -25,7 +25,8 @@ separadamente as posições horizontal e vertical da jogada, nesta ordem.
 		
 using namespace std;
 
-char tab[10]={'O','1','2','3','4','5','6','7','8','9'};
+char tab[10]={'1','2','3','4','5','6','7','8','9'};
+char marca= 'X';
 
 
 void tabuleiro()
@@ -33,13 +34,158 @@ void tabuleiro()
     system("cls");
     printf ("\n\t\t*********** JOGO DO GALO *********\n");
     printf ("    |    |      \n");
-    printf ("  %c | %c  | %c   \n",tab[1],tab[2],tab[3]);
+    printf ("  %c | %c  | %c   \n",tab[0],tab[1],tab[2]);
     printf (" ___|____|____  \n");
     printf ("    |    |      \n");
-    printf ("  %c | %c  | %c   \n",tab[4],tab[5],tab[6]);
+    printf ("  %c | %c  | %c   \n",tab[3],tab[4],tab[5]);
     printf (" ___|____|____  \n");
     printf ("    |    |      \n");
-    printf ("  %c | %c  | %c   \n",tab[7],tab[8],tab[9]);
+    printf ("  %c | %c  | %c   \n",tab[6],tab[7],tab[8]);
+}
+
+void xxx(int i)
+{
+    if ((i == 1) && (tab[0]='1'))
+    {
+        tab[0]=marca
+    }
+    else
+    {
+        if ( (i==2) && (tab[1]='2'))
+        {
+            tab[1]=marca;
+        }
+        else
+        {
+            if ( (i==3) && (tab[2]='3'))
+            {
+                tab[2]=marca;
+            }
+            else
+            {
+                if ( (i==4) && (tab[3]='4'))
+                {
+                    tab[3]=marca;
+                }
+                else
+                {
+                    if ( (i==5) && (tab[4]='5'))
+                    {
+                        tab[4]=marca;
+                    }
+                    else
+                    {
+                        if ( (i==6) && (tab[5]='6'))
+                        {
+                            tab[5]=marca;
+                        }
+                        else
+                        {
+                            if ( (i==7) && (tab[6]='7'))
+                            {
+                                tab[6]=marca;
+                            }
+                            else
+                            {
+                                if ( (i==8) && (tab[7]='8'))
+                                {
+                                    tab[7]=marca;
+                                }
+                                else
+                                {
+                                    if ( (i==9) && (tab[8]='8'))
+                                    {
+                                        tab[8]=marca;
+                                    }
+                                    else
+                                    {
+                                        cout<<"Jogada Inválida!!\n";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+void jogar(int i)
+{
+    switch (i)
+    {
+        case 0:
+            tab[0]=marca;
+            break;
+        case 1:
+            tab[0]=marca;
+            break;
+        case 2:
+            tab[0]=marca;
+            break;
+        case 3:
+            tab[0]=marca;
+            break;
+        case 4:
+            tab[0]=marca;
+            break;
+        case 5:
+            tab[0]=marca;
+            break;
+        case 6:
+            tab[0]=marca;
+            break;
+        case 7:
+            tab[0]=marca;
+            break;
+        case 8:
+            tab[0]=marca;
+            break;
+        case 9:
+            tab[0]=marca;
+            break;
+        default:
+            cout << "Inválido!\n";
+        //     break;
+    }
+
+    tabuleiro();
+}
+/////////////////////////////////////////////////////////////////////////////////////////////
+int verifica()
+{
+    if (tab[1] == tab[2] && tab[2] == tab[3])
+
+        return 1;
+    else if (tab[4] == tab[5] && tab[5] == tab[6])
+
+        return 1;
+    else if (tab[7] == tab[8] && tab[8] == tab[9])
+
+        return 1;
+    else if (tab[1] == tab[4] && tab[4] == tab[7])
+
+        return 1;
+    else if (tab[2] == tab[5] && tab[5] == tab[8])
+
+        return 1;
+    else if (tab[3] == tab[6] && tab[6] == tab[9])
+
+        return 1;
+    else if (tab[1] == tab[5] && tab[5] == tab[9])
+
+        return 1;
+    else if (tab[3] == tab[5] && tab[5] == tab[7])
+
+        return 1;
+    else if (tab[1] != '1' && tab[2] != '2' && tab[3] != '3' 
+                    && tab[4] != '4' && tab[5] != '5' && tab[6] != '6' 
+                  && tab[7] != '7' && tab[8] != '8' && tab[9] != '9')
+
+        return 0;
+    else
+        return -1;
 }
 
 
@@ -49,12 +195,21 @@ int main()
 {
     
     string jog1,jog2;
+    int jogada;
     tabuleiro();
     printf ("Nome do jogador 1--> ");
-    scanf ("%s",jog1);
+    cin >> jog1;
     printf ("Nome do jogador 2--> ");
-    scanf ("%s",jog2);
-    printf *(@)
+    cin >>jog2;
+
+
+    cout<<jog1<<"-->";
+    cin>>jogada;
+    jogar(jogada);
+    cout<<jog2<<"-->";
+    cin>>jogada;
+    jogar(jogada);
+ 
     system("pause");				
 	return 0;	
 }
