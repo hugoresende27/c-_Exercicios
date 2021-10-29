@@ -9,7 +9,7 @@ maria	17	        14	        18	    16
 */
 
 #include <iostream>	
-#include <string>		
+#include <string.h>		
 using namespace std;
 #define LIN 5
 #define COL 5
