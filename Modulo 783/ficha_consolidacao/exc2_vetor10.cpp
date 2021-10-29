@@ -10,11 +10,38 @@ using namespace std;
 int main()								
 {
     int vetor[TAM];
+    int ele;
+    bool existe;
+
     for (int i=0; i<TAM; i++)
     {
-        printf ("[%d] --> ");
-        scanf("%d",vetor[i]);
+        printf ("[%d] --> ",i+1);
+        scanf("%d",&vetor[i]);
     }
+    printf ("Qual o elemento a procurar?--> ");
+    scanf ("%d",&ele);
+
+    for (int i=0; i<TAM; i++)
+    {
+        if (vetor[i] == ele)
+        {
+            existe=true;
+            break; 
+        }
+    }
+    if (!existe)
+    {
+        printf ("\tNÂO ENCONTRADO\n");
+    }
+    else
+    {
+        printf ("O elemento %d ENCONTRADO\n", ele);
+    }
+    cout << "**** VETOR ****\n";
+    for (int i=0; i<TAM; i++)
+    {
+        printf ("[%d] ",vetor[i]);
+    }  
     system("pause");				
 	return 0;	
 }

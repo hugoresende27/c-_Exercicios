@@ -11,8 +11,8 @@ maria	17	        14	        18	    16
 #include <iostream>	
 #include <string.h>		
 using namespace std;
-#define LIN 3
-#define COL 3
+#define LIN 5
+#define COL 5
 
 
 int main()								
@@ -43,26 +43,6 @@ int main()
         
     }
 
-     int notas[LIN-1],total;
-    float media=0;
-
-     for (int i=1;i<LIN;i++)
-    {
-         for (int j=1;j<COL;j++)
-         {
-            total+=stoi(matriz[i][j]);
-         }   
-        //  notas[i]=total;
-        //  total=0;
-     }
-    
-
-    
-    // for (int i=1;i<LIN;i++)
-    // {
-    //     media = notas[i]/(COL-1);
-    //     cout << matriz[i][0]<<" -> Media :"<<media<<endl;
-    // }
 
     for (int i=0;i<LIN;i++)
     {
@@ -72,8 +52,6 @@ int main()
         }
         cout<<endl;
     }
-
-     printf ("TOTAL NOTAS:: %d\n",total);
 
  
     system("pause");				
