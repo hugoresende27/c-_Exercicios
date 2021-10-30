@@ -26,9 +26,9 @@ separadamente as posições horizontal e vertical da jogada, nesta ordem.
 using namespace std;
 
 char tab[10]={'1','2','3','4','5','6','7','8','9'};
-char marca= 'X';
+char marca = 'X';
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////
 void tabuleiro()
 {
     system("cls");
@@ -42,12 +42,12 @@ void tabuleiro()
     printf ("    |    |      \n");
     printf ("  %c | %c  | %c   \n",tab[6],tab[7],tab[8]);
 }
-
-void xxx(int i)
+/////////////////////////////////////////////////////////////////////////////////////////////
+void validar_jogada(int i)
 {
     if ((i == 1) && (tab[0]='1'))
     {
-        tab[0]=marca
+        tab[0]=marca;
     }
     else
     {
@@ -65,7 +65,7 @@ void xxx(int i)
             {
                 if ( (i==4) && (tab[3]='4'))
                 {
-                    tab[3]=marca;
+                   tab[3]=marca;
                 }
                 else
                 {
@@ -100,6 +100,7 @@ void xxx(int i)
                                     else
                                     {
                                         cout<<"Jogada Inválida!!\n";
+                                        
                                     }
                                 }
                             }
@@ -110,48 +111,8 @@ void xxx(int i)
         }
     }
 }
+/////////////////////////////////////////////////////////////////////////////////////////////
 
-void jogar(int i)
-{
-    switch (i)
-    {
-        case 0:
-            tab[0]=marca;
-            break;
-        case 1:
-            tab[0]=marca;
-            break;
-        case 2:
-            tab[0]=marca;
-            break;
-        case 3:
-            tab[0]=marca;
-            break;
-        case 4:
-            tab[0]=marca;
-            break;
-        case 5:
-            tab[0]=marca;
-            break;
-        case 6:
-            tab[0]=marca;
-            break;
-        case 7:
-            tab[0]=marca;
-            break;
-        case 8:
-            tab[0]=marca;
-            break;
-        case 9:
-            tab[0]=marca;
-            break;
-        default:
-            cout << "Inválido!\n";
-        //     break;
-    }
-
-    tabuleiro();
-}
 /////////////////////////////////////////////////////////////////////////////////////////////
 int verifica()
 {
@@ -196,19 +157,28 @@ int main()
     
     string jog1,jog2;
     int jogada;
+    int contador=9;
     tabuleiro();
     printf ("Nome do jogador 1--> ");
     cin >> jog1;
     printf ("Nome do jogador 2--> ");
     cin >>jog2;
 
+    do
+    {
+        tabuleiro();
+        cout<<jog1<<"-->";
+        cin>>jogada;
+        jogar(jogada);
+        cout<<jog2<<"-->";
+        cin>>jogada;
+        jogar(jogada);
+        contador--;
+    } while (contador>0);
+    
 
-    cout<<jog1<<"-->";
-    cin>>jogada;
-    jogar(jogada);
-    cout<<jog2<<"-->";
-    cin>>jogada;
-    jogar(jogada);
+
+
  
     system("pause");				
 	return 0;	
