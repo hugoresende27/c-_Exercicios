@@ -1,26 +1,4 @@
-/*
-As jogadas do jogo do galo deverão ser armazenadas numa matriz (3x3) de
-caractere, chamada "tabuleiro", cada posição desta matriz armazenará um dos
-valores: " ", "_", "X" ou "O". Abaixo uma representação gráfica desta matriz.
 
-   1   2   3
-1 ___|___|___
-2 ___|___|___
-3    |   |
-
-2 - A cada jogada o programa deverá mostrar na tela a situação atual do
-“tabuleiro”. Por exemplo:
-
-    1  2   3
-1 ___|___|___
-2 ___|_X_|___
-3  O |   | O
-
-3 - Terão dois jogadores no jogo. O programa deve solicitar o nome dos dois
-jogadores antes de começar o jogo. A cada jogada o programa deverá perguntar
-separadamente as posições horizontal e vertical da jogada, nesta ordem.
-
-*/
 #include <iostream>	
 		
 using namespace std;
@@ -31,7 +9,7 @@ char tab[3][3]={{'1','2','3'},
 char vez = 'X',outra_x;
 int opcao,lin,col;
 string jog1,jog2;
-bool empate;
+bool empate,continuar;
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 void tabuleiro()
@@ -118,26 +96,26 @@ void jogar(string a,string b)
     tabuleiro();
 }
 /////////////////////////////////////////////////////////////////////////////////////////////
-bool gameOver()
+void gameOver()
 {
     for (int i=0;i<3;i++)//verifica linhas e colunas 
     {
         if (tab[i][0] == tab[i][1] && tab[i][2] == tab[i][0] ||
             tab[0][i] == tab[1][i] && tab[2][i] == tab[0][i] )
-            return false;
+            continuar = false;
     }
     if (tab[0][0] == tab[1][1] && tab[2][2] == tab[1][1] || //verifica diagonais
         tab[0][2] == tab[1][1] && tab[1][1] == tab[2][0] )
-        return false;
+        continuar = false;
     
     for (int i=0;i<3;i++)
         for (int j=0;j<3;j++)
         {
             if (tab[i][j] != 'X' && tab[i][j] != 'O')
-            return true;
+            continuar = true;
         }
     empate = true;
-    return false;
+    continuar = false;;
 }
 /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -153,7 +131,7 @@ do
     cin >> jog1;
     printf ("Nome do jogador 2--> ");
     cin >>jog2;
-    while (gameOver()==true)      //gameOver instanciado em true
+    while (continuar)      //var continuar a controlar 
     {
         tabuleiro();
         jogar(jog1,jog2);
@@ -171,10 +149,10 @@ do
     {
         cout << "EMPATE\n";
     }
-    empate=true;
     cout << "Jogar outra vez (s/n)?->";
     cin >>outra_x;
     outra_x=tolower(outra_x);
+    continuar=true;
 }while (outra_x != 'n');
     system("pause");				
 	return 0;	
