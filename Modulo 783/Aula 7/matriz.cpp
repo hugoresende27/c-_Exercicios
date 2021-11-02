@@ -43,7 +43,7 @@ int main()
         
     }
 
-     int notas[LIN-1],total;
+    int notas[LIN-1],total;
     float media=0;
 
      for (int i=1;i<LIN;i++)
