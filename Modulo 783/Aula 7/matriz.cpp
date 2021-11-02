@@ -11,8 +11,8 @@ maria	17	        14	        18	    16
 #include <iostream>	
 #include <string.h>		
 using namespace std;
-#define LIN 3
-#define COL 3
+#define LIN 5
+#define COL 5
 
 
 int main()								
