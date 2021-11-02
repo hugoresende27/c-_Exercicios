@@ -3,9 +3,7 @@
 using namespace std;
 
 int main(){
-int i,j,nLin,nCol;
-string matriz[i][j]={};
-    
+int i,j,nLin,nCol; 
 cout<<"Criar uma matriz/tabela \n";
 cout<<"Numero de linhas: ";
 cin>>i;
@@ -14,7 +12,8 @@ cout<<"Numero de colunas: ";
 cin>>j;
 nCol=j;
 cout<<"Insira os dados para a tabela: \n";
-	
+string matriz[i][j]={};
+
 for(i=0;i<nLin;i++){
 	for(j=0;j<nCol;j++){
 	//scanf("%s",&matriz[i][j]);
