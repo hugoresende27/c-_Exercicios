@@ -1,0 +1,1 @@
+cout<<"Introduza 4 numeros:\n";
