@@ -1,3 +1,7 @@
+/*
+C -> F ℉ =℃ * 1.8 + 32
+F -> C  - ℃ =(℉ - 32) / 1.8
+*/
 #include <iostream>
 #include <locale>
 
