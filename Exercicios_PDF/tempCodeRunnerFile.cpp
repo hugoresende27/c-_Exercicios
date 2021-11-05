@@ -1,1 +1,1 @@
-printf ("%s--> ",jog1);
+vetor
