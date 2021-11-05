@@ -8,7 +8,7 @@ produtos[i].c_str(),codigo.c_str()
 */
 #include <iostream>	
 #include <string.h>
-#define TAM 2//10//1		
+#define TAM 3//10//1		
 using namespace std;
 
 
@@ -20,6 +20,7 @@ int main()
     float valVenda[TAM];
     int op;
     string codigo;
+    bool encontrado=false;
 
     cout << "***** PROGRAMA PRODUTOS *****\n";
     for (int i=0; i<TAM; i++)
@@ -42,41 +43,44 @@ int main()
         cout << "**************************\n";
         cout << "Opção [1/2/3]--> ";
         cin >> op;
-    }while ( (op!=1) && (op !=2) && (op!=3) );
-    switch (op)
-    {
-    case 1:
-        cout << "PRODUTOS\tQUANTIDADE\tCOMPRA\tVENDA\n";
-        for (int i=0; i<TAM; i++)
+   
+        switch (op)
         {
-            cout <<"-> "<< produtos[i]<<"\t\t"<<qtd[i]<<"\t\t"<<valCompra[i]<<"\t"<<valVenda[i]<< endl;
-        }
-        break;
-    case 2:
-        cout << "Qual o código do produto? --> ";
-        cin >> codigo;
-        for (int i=0;i<TAM;i++)
-        {
-            if (strcmp(produtos[i].c_str(),codigo.c_str())==0) //preciso converter a string para c_str()
+        case 1:
+            cout << "PRODUTOS\tQUANTIDADE\tCOMPRA\tVENDA\n";
+            for (int i=0; i<TAM; i++)
             {
-                cout << "PRODUTOS\tQUANTIDADE\tCOMPRA\tVENDA\n";
                 cout <<"-> "<< produtos[i]<<"\t\t"<<qtd[i]<<"\t\t"<<valCompra[i]<<"\t"<<valVenda[i]<< endl;
             }
-            else
+            break;
+        case 2:
+            cout << "Qual o código do produto? --> ";
+            cin >> codigo;
+            for (int i=0;i<TAM;i++)
             {
-                cout <<"PRODUTO NÃO ENCONTRADO\n";
+                if (strcmp(produtos[i].c_str(),codigo.c_str())==0) //preciso converter a string para c_str()
+                {
+                    encontrado = true;
+                    cout << "PRODUTOS\tQUANTIDADE\tCOMPRA\tVENDA\n";
+                    cout <<"-> "<< produtos[i]<<"\t\t"<<qtd[i]<<"\t\t"<<valCompra[i]<<"\t"<<valVenda[i]<< endl;
+                    break;//não preciso de percorrer o resto do vetor, quando encontrado o codigo único
+                }
             }
+            if (encontrado == false)
+            {
+                cout << "Produto não encontrado!\n";
+            }
+            break;
+        case 3:
+            cout<<"Encerrando...\n";
+            exit(1);
+            break;
+        
+        default:
+            cout << "Opção inválida!\n ";
+            break;
         }
-        break;
-    case 3:
-        cout<<"Encerrando...\n";
-        exit(1);
-        break;
-    
-    default:
-        cout << "Opção inválida!\n ";
-        break;
-    }
+    }while ( op!=3 );
  
     system("pause");				
 	return 0;	

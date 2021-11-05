@@ -34,6 +34,7 @@ int main()
                 cout << vetA[i]<<" | "; 
                 vetC[cont] = vetA[i];
                 cont++;
+                break;
             }
         }      
     }
