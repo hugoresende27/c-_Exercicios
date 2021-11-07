@@ -33,6 +33,7 @@ fimenquanto
 Fimalgoritmo
 */
 #include <iostream>
+#include <string.h>
 
 using namespace std;
 
@@ -41,7 +42,8 @@ int main()
     int idade [3];
     string nomes[3];
 
-    int nomes_iguais=1,contador,soma_idades=0;
+    int nomes_iguais=0,soma_idades=0;
+    int i=0,j=1;
 
     for (int i=0 ;i<3; i++ )
     {
@@ -51,24 +53,31 @@ int main()
         cin >> idade[i];
     }
 
-contador = 0;
-while (contador<4)  //  for (int i=0; i<3 ; i++ )
-    {
-        if (nomes[contador]==nomes[contador+1])
-        {
-             ++nomes_iguais;
-             soma_idades += idade[contador+1];
-             cout << "Existem "<< nomes_iguais << " nomes iguais" << "\nSoma de idades::  "<<soma_idades<<endl;
-        }
-        else 
-        {
-          if (nomes[contador].length()>4)
-               cout << "Aluno "<<nomes[contador]<<idade[contador]<<endl;
+
+for (int i=0; i<3;i++)
+{
+for (int j=2;j>=0;j--)
+{
+
+          if (strcmp(nomes[i].c_str(),nomes[j].c_str())==0)  //nomes[contador]==nomes[contador+1])
+          {
+               nomes_iguais++;
+               soma_idades += idade[i] + idade[j] ;
+               cout<<"SOMAIDADES"<<soma_idades;
                break;
-        }
-     contador++;
-     
-    }
+          }
+          else 
+          {
+               if (nomes[i].length()>4)
+                    cout << "Aluno "<<nomes[i]<<idade[i]<<endl;
+          } 
+}
+}
+
+       
+          
+
+cout << "Existem "<< nomes_iguais << " nomes iguais" << "\nSoma de idades::  "<<soma_idades<<endl;
  
  
     system ("pause");
