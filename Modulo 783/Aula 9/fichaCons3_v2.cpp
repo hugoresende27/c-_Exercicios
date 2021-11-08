@@ -65,7 +65,7 @@ int main()
     cout <<"A média das idades das pessoas que responderam excelente--> "<< mediaIdades <<" anos"<<endl;
     cout <<"A quantidade de pessoas que responderam regular--> "<<pessoasReg<<endl;
 
-    perBom = (pessoasBom*100)/MAX;//percentagem total de pessoas q votaram bom X 100% a dividir pelo total de pessoas
+    perBom = (pessoasBom*100)/MAX;//percentagem = total de pessoas q votaram bom X 100% a dividir pelo total de pessoas
     cout <<"A percentagem de pessoas que responderam bom entre todos os expectadores analisados--> "<< perBom<<"%"<<endl;
     system("pause");				
 	return 0;	
