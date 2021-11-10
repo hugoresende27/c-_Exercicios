@@ -1,1 +1,1 @@
-fatorial
+fat

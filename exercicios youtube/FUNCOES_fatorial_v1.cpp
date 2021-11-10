@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int fatorial (int n)
+void fatorial (int n)
 {
 	int fat=1;
 	for (int i =1;i<=n;i++)
@@ -13,7 +13,7 @@ int fatorial (int n)
 		fat=fat*i;
 		printf("%d X ",fat);
 	}
-	return fat;
+	//return fat;
 }
 
 int main ()
@@ -23,8 +23,9 @@ int main ()
 	cout<<"Funcao fatorial\nQual o Num?:: ";
 	cin>>num;
 	cout<<"Resultado fatorial "<<num<<" ::";
-	resultado= fatorial (num);
-	cout<<resultado<<endl;
+	//resultado = fatorial (num);
+	//cout<<resultado<<endl;
+	fatorial(num);
 	
 	system("pause");
 	return 0;
