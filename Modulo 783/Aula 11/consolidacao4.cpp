@@ -27,7 +27,7 @@ do
     {
         cout << "ESTADO CIVIL\n [C]asado / [S]solteiro / [V]iuvo / [D]ivorciado]:: ";
         cin>>estado;
-    } while (!(isalpha(estado)) );
+    } while (!(isalpha(estado)) );//enquanto nao for letra, alfa 
     
     estado = toupper(estado);
     totalPessoas++;
