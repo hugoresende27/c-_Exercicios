@@ -19,19 +19,24 @@ int LeNumero (int n1, int n2)
 int main()								
 {
     int num;
-    printf ("Funcao tabuada\nqual o nr? --> ");
-    scanf ("%d",&num);
-    if (num>1 && num<=10)
+    do
     {
-        for (int i=1;i<=10;i++)
+        printf ("Funcao tabuada\nqual o nr? --> ");
+        scanf ("%d",&num);
+        if (num>1 && num<=10)
         {
-            printf ("%d X %d = %d\n", i , num , LeNumero(i,num) );
+            for (int i=1;i<=10;i++)
+            {
+                printf ("%d X %d = %d\n", i , num , LeNumero(i,num) );
+            }
         }
-    }
-    else
-    {
-        printf ("NUMERO INVALIDO\n");
-    }
+        else
+        {
+            printf ("NUMERO INVALIDO\n");
+        }
+    } while (num>10 || num < 1);
+    
+  
     system("pause");				
 	return 0;	
 }

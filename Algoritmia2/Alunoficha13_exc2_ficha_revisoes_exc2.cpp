@@ -74,11 +74,7 @@ for (int j=2;j>=0;j--)
 }
 }
 
-       
-          
-
 cout << "Existem "<< nomes_iguais << " nomes iguais" << "\nSoma de idades::  "<<soma_idades<<endl;
- 
  
     system ("pause");
     return 0;

@@ -3,7 +3,7 @@ Faça um programa que receba a idade e o estado civil (C - casado, S - solteiro,
 a quantidade de pessoas casadas;
 a quantidade de pessoas solteiras;
 a média das idades das pessoas viúvas;
-a percentagem de pessoas divorciadas ou solteiras dentre todas as pessoas analisadas.
+a percentagem de pessoas divorciadas ou separadas dentre todas as pessoas analisadas.
 Obs.: Para encerrar a entrada de dados, insira um número menor que zero para a idade.
 */
 #include <iostream>			
@@ -20,9 +20,9 @@ int main()
     cout << "**** PROGRAMA ESTADO CIVIL ****\n";
 do
 {
-    cout << "IDADE (menor do que 0 para sair):: ";
+    cout << "IDADE (0 para sair):: ";
     cin >> idade;
-    if (idade < 0) break;
+    if (idade == 0) break;
     do
     {
         cout << "ESTADO CIVIL\n [C]asado / [S]solteiro / [V]iuvo / [D]ivorciado]:: ";
@@ -31,6 +31,8 @@ do
     
     estado = toupper(estado);
     totalPessoas++;
+
+
     switch (estado)
     {
     case 'C':
@@ -46,11 +48,12 @@ do
     case 'D':
         divorciadas++;
         break;
+    
     default:
         naoRespondeu++;
         break;
     }
-}while(idade >= 0);
+}while(idade!=0);
 
     
     if (viuvas > 0){
@@ -59,7 +62,7 @@ do
         mediaViuvas = 0;
     }
     singles = (divorciadas+solteiras);
-    if (singles > 0) {
+     if (singles > 0) {
         mediaSingles = singles / totalPessoas * 100; 
     } else {
         mediaSingles = 0;
@@ -77,3 +80,5 @@ do
     system("pause");				
 	return 0;	
 }
+
+
