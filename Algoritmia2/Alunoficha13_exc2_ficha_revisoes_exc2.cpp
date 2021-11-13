@@ -37,15 +37,16 @@ Fimalgoritmo
 
 using namespace std;
 
-int main()
+int idade [3];
+string nomes[3];
+
+int nomes_iguais=0,soma_idades=0;
+int i=0,j=1;
+
+
+void recebeDados ()
 {
-    int idade [3];
-    string nomes[3];
-
-    int nomes_iguais=0,soma_idades=0;
-    int i=0,j=1;
-
-    for (int i=0 ;i<3; i++ )
+for (int i=0 ;i<3; i++ )
     {
         cout << "Indice [" << i << "] Qual o nome?-->";
         cin >> (nomes[i]);
@@ -53,26 +54,32 @@ int main()
         cin >> idade[i];
     }
 
+}
 
+void mostraDados()
+{
 for (int i=0; i<3;i++)
 {
-for (int j=2;j>=0;j--)
-{
+     if (strcmp(nomes[i].c_str(),nomes[i+1].c_str())==0)  //nomes[contador]==nomes[contador+1])
+     {
+          nomes_iguais++;
+          soma_idades += idade[i] + idade[i+1] ;
+          break;
+     }
+     else 
+     {
+          if (nomes[i].length()>4)
+               cout << "Aluno "<<nomes[i]<<idade[i]<<endl;
+     } 
+}
 
-          if (strcmp(nomes[i].c_str(),nomes[j].c_str())==0)  //nomes[contador]==nomes[contador+1])
-          {
-               nomes_iguais++;
-               soma_idades += idade[i] + idade[j] ;
-               cout<<"SOMAIDADES"<<soma_idades;
-               break;
-          }
-          else 
-          {
-               if (nomes[i].length()>4)
-                    cout << "Aluno "<<nomes[i]<<idade[i]<<endl;
-          } 
 }
-}
+
+int main()
+{
+  
+recebeDados();
+mostraDados();
 
 cout << "Existem "<< nomes_iguais << " nomes iguais" << "\nSoma de idades::  "<<soma_idades<<endl;
  
