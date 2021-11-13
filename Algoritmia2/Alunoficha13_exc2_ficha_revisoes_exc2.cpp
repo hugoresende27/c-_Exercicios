@@ -44,17 +44,32 @@ int nomes_iguais=0,soma_idades=0;
 int i=0,j=1;
 
 
-void recebeDados ()
+int recebeIdade()
 {
-for (int i=0 ;i<3; i++ )
-    {
-        cout << "Indice [" << i << "] Qual o nome?-->";
-        cin >> (nomes[i]);
-        cout << "Indice [" << i << "]  Idade? -->";
-        cin >> idade[i];
-    }
-
+     int idade;
+     cout << "Idade? -->";
+     cin>>idade;
+     return idade;
 }
+string recebeNome()
+{
+     string nome;
+     cout << "Nome? -->";
+     cin>>nome;
+     return nome;
+}
+
+// void recebeDados ()
+// {
+// for (int i=0 ;i<3; i++ )
+//     {
+//         cout << "Indice [" << i << "] Qual o nome?-->";
+//         cin >> (nomes[i]);
+//         cout << "Indice [" << i << "]  Idade? -->";
+//         cin >> idade[i];
+//     }
+
+// }
 
 void mostraDados()
 {
@@ -78,7 +93,12 @@ for (int i=0; i<3;i++)
 int main()
 {
   
-recebeDados();
+for (int i=0;i<3;i++)
+{
+     nomes[i] = recebeNome();
+     idade[i] = recebeIdade();
+}
+
 mostraDados();
 
 cout << "Existem "<< nomes_iguais << " nomes iguais" << "\nSoma de idades::  "<<soma_idades<<endl;
