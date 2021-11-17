@@ -35,10 +35,10 @@ int main()
 
     string pesquisa;
     cout << "Qual o produto a pesquisar? --> ";
-    cin >> pesquisa;
+    getline(cin, pesquisa);
     for (int i=0; i<4; i++)
     {
-        if (strcmp(matriz[i][1],pesquisa)==0)
+        if (strcmp(matriz[i][1].c_str(),pesquisa.c_str())==0)
         {
             cout << matriz[i][1];
         }
