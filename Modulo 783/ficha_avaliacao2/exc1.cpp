@@ -3,20 +3,40 @@
 inversa, integralmente em maiúsculas;
 */
 #include <iostream>	
-		
+#include <bits/stdc++.h>
+
 using namespace std;
 
 int main()								
 {
-    char nome[10];
+    char nome[10],inverso[10];
+    int contInv=0;
     cout << "******* EXERCICIO 1 *******\n";
     cout << "Qual o nome? -->";
     scanf ("%s",nome);
-    for (int i=10; i>=0;i--)
+    printf ("%s", nome);
+    for (int i=9; i>=0;i--)
     {
+        inverso[contInv]=nome[i];
+        contInv++;
         nome[i]=toupper(nome[i]);
         cout << (nome[i]);
     }
+
+    printf ("\nInverso %c", inverso);
+    cout << inverso;
+    cout << nome;
+    for (int i=0; i<10; i++)
+    {
+        cout << inverso[i];
+    }
+    
+    cout << endl;
+    string str = "";
+    cout << "Nome 2:: ";
+    cin >> str;   
+    // Reverse str[begin..end]
+    reverse (str.begin(), str.end() ) ;
     cout<<"\nEncerrando...\n";
     system("pause");				
 	return 0;	

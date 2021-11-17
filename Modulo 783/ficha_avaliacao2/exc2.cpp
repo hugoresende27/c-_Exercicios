@@ -20,13 +20,13 @@ int main()
     string res[20];
     float notas [20];
     cout << "****** EXERCICIO 2 *********\n";
-
+    
     do
     {
         cout << "Insira o nome do aluno--> ";
-        cin >>nomes[tamanho];
+        cin >> nomes[tamanho];
         cout << "Qual a nota? (0 para sair) --> ";
-        cin>> nota;
+        cin >> nota;
         if (nota == 0) break;
         else
         {
