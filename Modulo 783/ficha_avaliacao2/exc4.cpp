@@ -17,11 +17,17 @@ int main()
     {
         for(int j=0; j<2; j++)
             {
-                printf ("Insira o elemento [%d][%d]--> ", i,j);
-                // fflush(stdin);
-                //cin >> matriz[i][j];
-                //scanf("%s", matriz[i][j]);
-                getline(cin , matriz[i][j]);
+                if (i%2==0)
+                {
+                    printf ("Insira o tipo [%d][%d]--> ", i,j);
+                    getline(cin , matriz[i][j]);
+                } else {
+                    printf ("Insira o código [%d][%d]--> ", i,j);
+                    getline(cin , matriz[i][j]);
+                }
+              
+                
+                
             }
     }
     for (int i=0; i<4; i++)
@@ -40,7 +46,7 @@ int main()
     {
         if (strcmp(matriz[i][1].c_str(),pesquisa.c_str())==0)
         {
-            cout << matriz[i][1];
+            cout << matriz[i][0];
         }
         
     }
