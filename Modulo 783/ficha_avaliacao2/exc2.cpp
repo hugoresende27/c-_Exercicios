@@ -8,9 +8,7 @@ Exemplo: Francisco – 10 - Aprovado
 */
 #include <iostream>	
 	
-
 using namespace std;
-
 
 int main()								
 {
@@ -20,7 +18,7 @@ int main()
     string res[20];
     float notas [20];
     cout << "****** EXERCICIO 2 *********\n";
-    
+
     do
     {
         cout << "Insira o nome do aluno--> ";
@@ -54,7 +52,7 @@ int main()
     {
         cout << nomes[i]<<"\t"<<notas[i]<<"\t"<<res[i]<<endl;
     }
-    
+
     system("pause");				
 	return 0;	
 }

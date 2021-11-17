@@ -14,7 +14,6 @@ int main()
     cout << "******* EXERCICIO 1 *******\n";
     cout << "Qual o nome? -->";
     scanf ("%s",nome);
-    printf ("%s", nome);
     for (int i=9; i>=0;i--)
     {
         inverso[contInv]=nome[i];
@@ -23,20 +22,22 @@ int main()
         cout << (nome[i]);
     }
 
-    printf ("\nInverso %c", inverso);
-    cout << inverso;
-    cout << nome;
+
+    //printf ("\nInverso %s", inverso);
+    //cout << inverso;
+   
     for (int i=0; i<10; i++)
     {
         cout << inverso[i];
     }
     
-    cout << endl;
+    /*
     string str = "";
     cout << "Nome 2:: ";
     cin >> str;   
     // Reverse str[begin..end]
     reverse (str.begin(), str.end() ) ;
+    */
     cout<<"\nEncerrando...\n";
     system("pause");				
 	return 0;	

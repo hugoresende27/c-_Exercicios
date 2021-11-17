@@ -43,7 +43,6 @@ int main()
     case 7:
         cout << "SÁBADO\n";
         break;
-    
     default:
         cout << "OPÇÃO INVÁLIDA\n";
         break;

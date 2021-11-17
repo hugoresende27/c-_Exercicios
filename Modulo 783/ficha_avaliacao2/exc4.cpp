@@ -10,7 +10,6 @@ Sapato tipo 4 30
 #include <string.h>	
 using namespace std;
 
-
 int main()								
 {
     string matriz [4][2];
@@ -22,7 +21,7 @@ int main()
                 // fflush(stdin);
                 //cin >> matriz[i][j];
                 //scanf("%s", matriz[i][j]);
-                getline(cin >> ws, matriz[i][j]);
+                getline(cin , matriz[i][j]);
             }
     }
     for (int i=0; i<4; i++)
