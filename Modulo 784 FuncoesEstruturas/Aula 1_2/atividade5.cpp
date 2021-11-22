@@ -73,6 +73,9 @@ do
     case '/':
         cout << "\n\tA divisão entre "<<num1<<" e "<<num2<< " vai ser "<<setprecision(2)<<fixed<<div(num1,num2)<<endl;
         break;
+    default :
+        cout << "OPCAO INVÁLIDA\n";
+        break;
     }
 
 }while (true);

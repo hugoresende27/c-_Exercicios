@@ -44,7 +44,6 @@ bool doencas (int x)
 int main()								
 {
     int ida,doenca;
-    char sofre;
     cout << "Programa Idade\nQual a idade --> ";
     cin >> ida;
     cout << "Sofre de alguma doença?\n";

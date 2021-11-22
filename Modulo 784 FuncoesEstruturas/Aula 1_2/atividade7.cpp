@@ -29,10 +29,13 @@ int primo (int x)
 int main()								
 {
     int num;
-    cout << "Programa primos\nQual o nr-> ";
+    do 
+    {
+    cout << "Programa primos(-1 para sair)\nQual o nr-> ";
     cin >>num;
     //primo(num);
     primo(num) == 1 ? cout << "primo\n" : cout<<"não primo...\n";
+    }while (num>0);
 
     system("pause");				
 	return 0;	

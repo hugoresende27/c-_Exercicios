@@ -19,7 +19,6 @@ int main()
         if (num1 == num2) cout<<"IGUAIS\n";
         else cout << "DIFERENTES\n";
     } while (true);
-
     system("pause");				
 	return 0;	
 }
