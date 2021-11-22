@@ -2,6 +2,7 @@
  Receba do teclado um nome até 10 caracteres em minúsculas e imprima-o por ordem
 inversa, integralmente em maiúsculas;
 */
+
 #include <iostream>	
 #include <bits/stdc++.h>
 

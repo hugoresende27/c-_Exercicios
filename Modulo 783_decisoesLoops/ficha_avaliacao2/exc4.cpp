@@ -24,10 +24,7 @@ int main()
                 } else {
                     printf ("Insira o código [%d][%d]--> ", i,j);
                     getline(cin , matriz[i][j]);
-                }
-              
-                
-                
+                }              
             }
     }
     for (int i=0; i<4; i++)
