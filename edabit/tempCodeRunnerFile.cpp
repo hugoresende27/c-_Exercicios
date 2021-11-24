@@ -1,5 +1,7 @@
-    // cout << maskify("4556364607935616") << endl;
-    // cout << maskify("64607935616") << endl;
-    // cout << maskify("1") << endl;
-    // cout << maskify("") << endl;
-    // maskify2("33333");
+    // for (int i=0; s.length(); i++)
+    // {
+    //     if (s[i] == c1)
+    //     {
+    //         s[i]= c2;
+    //     }
+    // }
