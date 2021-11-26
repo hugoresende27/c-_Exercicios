@@ -3,7 +3,7 @@
 #define MAX 5
 using namespace std;
 
-int maior (int tam, int arr[])
+int maior (int tam, int *arr)
 {
     int max = arr[0];
     for (int i=0; i<tam; i++)

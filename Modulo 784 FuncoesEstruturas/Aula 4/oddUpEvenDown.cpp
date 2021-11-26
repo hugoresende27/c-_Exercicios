@@ -13,8 +13,12 @@ evenOddTransform([1, 2, 3], 1) ➞ [3, 0, 5]
 #include <vector>
 using namespace std;
 
-vector<int> evenOddTransform(vector<int> arr, int n) {
-	
+int evenOddTransform( int arr[], int n=0) {
+    int m;
+	for (int i=0; i<arr.size();i++)
+    {
+        return arr[i];
+    }
 }
 
 int main()								
