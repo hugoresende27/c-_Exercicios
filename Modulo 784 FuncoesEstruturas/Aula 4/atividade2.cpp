@@ -20,6 +20,13 @@ void alfabeto2 (char *vet)
     }
 }
 
+void imprime_char( int *vet)
+{
+    for (int i=0 ;i<26 ;i++)
+    {
+        cout << "\t"<<vet[i]<<"-->"<<char(vet[i])<< endl;
+    }
+}
 int main()								
 {
     char alf[MAX];
@@ -36,8 +43,20 @@ int main()
         alfM[cont] = char(i);
         cont++;
     }
+
+    cout << "***************************\n";
     alfabeto2(alf);
+    cout << "***************************\n";
     alfabeto2(alfM);
+
+
+    int alfa[MAX];
+    for (int i=0; i<26;i++)
+    {
+        alfa[i]= 65+i;
+    }
+    cout << "***************************\n";
+    imprime_char(alfa);
     system("pause");				
 	return 0;	
 }
