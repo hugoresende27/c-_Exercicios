@@ -1,0 +1,34 @@
+EXERCICIO 1: 
+
+    int x, y, *p;
+    y = 0;  --> y tem o valor de 0
+    p = &y; --> p vai receber o endereço de memória de y
+    x = *p; --> x vai receber o valor de y, ou seja 0
+    x = 4;  --> variável x vai ter o valor 4
+    (*p)++; --> o apontador p, tem o valor de y, 0, ao adicionar +1, *p = 1
+    --x; --> a variável x tinha o valor de 4, -1 passou a valer 3
+    (*p) += x; --> apontador *p tem o valor de 1, variável x vale 3, 1+3 = 4
+
+2.  O programa abaixo contém erro(s), assinale-o(s)
+#include <iostream> <-- FALTA A BIBLIOTECA
+
+int main() <-- FUNÇÃO MAIN TEM DE RETORNAR ALGUMA COISA, NÃO PODE SER VOID 
+{
+   int x, *p; 
+   x = 100; 
+   *p = x; <-- PARA DIZER QUE O APONTADOR APONTA PARA O CONTEUDO DE x, preciso usar *p
+   printf(“Valor de p: %d.\n”, *p);
+}
+
+3. Qual é a saída do seguinte programa? 
+#include <iostream> <-- FALTA A BIBLIOTECA
+
+int main() <-- FUNÇÃO MAIN TEM DE RETORNAR ALGUMA COISA, NÃO PODE SER VOID 
+{
+   int i=5, *p;
+   p = &i;
+   cout << p << ‘\t’ << (*p+2) << ‘ \t’ << &i;
+   p  --> cout de endereço de memória de p 
+(*p+2)--> cout valor apontado por *p(5) + 2 = 7
+   &i --> cout de endereço de memória ocupado por var i 
+}
