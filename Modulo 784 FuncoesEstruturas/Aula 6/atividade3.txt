@@ -17,7 +17,8 @@ int main() <-- FUNÇÃO MAIN TEM DE RETORNAR ALGUMA COISA, NÃO PODE SER VOID
    int x, *p; 
    x = 100; 
    *p = x; <-- PARA DIZER QUE O APONTADOR APONTA PARA O CONTEUDO DE x, preciso usar *p
-   printf(“Valor de p: %d.\n”, *p);
+   printf(“Valor de p: %d.\n”, *p); <-- VALOR PARA ONDE APONTA *p, OU ENDEREÇO p 
+   return 0; <-- FALTA O RETURN
 }
 
 3. Qual é a saída do seguinte programa? 
@@ -28,7 +29,8 @@ int main() <-- FUNÇÃO MAIN TEM DE RETORNAR ALGUMA COISA, NÃO PODE SER VOID
    int i=5, *p;
    p = &i;
    cout << p << ‘\t’ << (*p+2) << ‘ \t’ << &i;
-   p  --> cout de endereço de memória de p 
+   return 0; <-- FALTA O RETURN
+   p  --> cout de valor contido em p 
 (*p+2)--> cout valor apontado por *p(5) + 2 = 7
    &i --> cout de endereço de memória ocupado por var i 
 }
