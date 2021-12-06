@@ -1,0 +1,425 @@
+Algoritmo "semnome"
+// Disciplina  : [UFCD 0781 - Analise de sistemas]
+// Professor   : Nuno Cunha 
+// Descri��o   : Aqui voc� descreve o que o programa faz! (fun��o)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 06/12/2021
+Var
+// Se��o de Declara��es das vari�veis 
+op,b,r,p,km,i,res,rx: inteiro
+begin: inteiro
+sair: caracter
+bus: vetor [1..6,1..2]de inteiro       // 6 rotas 2A 2B  2C   | ppl e km
+procedimento menu
+inicio
+      escreval("Inserir dados (passo obrigat�rio)  ")
+      escreval("1 � Media de pessoas por rota       ")
+      escreval("2 � Total de km percorridos        ")
+      escreval("3 � quantidade de pessoas numa rota       ")
+      escreval("4 � Determinar o lucro             ")
+fimprocedimento
+//--
+
+
+procedimento p_media
+var
+ro,ppla,pplb,pplc,i,cc,ca,cb: inteiro
+media: real
+
+inicio
+
+       //media:= (ppla + pplb)/2
+        ppla:=0   //inicializar os contadores
+        pplb:=0
+        pplc:=0
+       
+        para i de 1 ate 6 passo 1 faca
+          se (i=1) ou (i=4)entao
+              se  bus[i,0]<>0 entao
+                  ppla:= bus[i,1] + ppla
+                  ca:=ca+1
+              fimse
+          fimse
+          se (i=2) ou (i=5) entao
+               se  bus[i,1]<>0 entao
+                   pplb:= bus[i,0] + pplb
+                   cb:=cb+1
+               fimse
+          fimse
+          se (i=3) ou (i=6) entao
+               se  bus[i,1]<>0 entao
+                   pplc:= bus[i,0] + pplc
+                   cc:=cc+1
+               fimse
+          fimse
+       fimpara
+
+       escreval("rota A  | media=",ppla/ca)
+       escreval("rota B  | media=",pplb/cb)
+       escreval("rota C  | media=",pplc/cc)
+
+fimprocedimento
+
+//---
+procedimento p_km
+var
+ro,kma,kmb,kmc,i,cc,ca,cb: inteiro
+media: real
+
+inicio
+
+
+        kma:=0   //inicializar os contadores
+        kmb:=0
+        para i de 1 ate 6 passo 1 faca
+          se (i<4)entao
+             kma:= bus[i,2] + kma
+          senao
+             kmb:= bus[i,2] + kmb
+          fimse
+        fimpara
+
+       escreval("BUS A  | km=",kma)
+       escreval("BUS B  | km=",kmb)
+
+fimprocedimento
+
+//---
+funcao f_pessoas: inteiro
+var
+rr,i,t_ppl: inteiro
+inicio
+      //limpatela
+      escreval("rota 1=A, 2=B ou 3=C")
+      leia(rr)
+
+      t_ppl:= bus[rr,2] + t_ppl
+      rr:=rr+3
+      t_ppl:= bus[rr,2] + t_ppl
+      //--
+     retorne t_ppl
+
+fimfuncao
+
+//---
+
+funcao f_lucro(rx: inteiro, ppl:inteiro): real
+var
+lucro: real
+inicio
+      //limpatela
+      escolha rx
+        caso 1
+                lucro:= 3*ppl   //rota A
+        caso 2
+                lucro:= 2*ppl   //rota B
+        caso 3
+                lucro:= 1*ppl   //rota C
+      fimescolha
+
+     //--
+     retorne lucro
+
+fimfuncao
+
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+Inicio
+// Se��o de Comandos, procedimento, fun��es, operadores, etc... 
+
+// menu
+   menu
+   leia(op)
+   begin:=1  //para indicar que � a primeira vez --> pedir dados
+   sair:="n"
+   se begin=0 entao
+       enquanto sair="n" faca
+           escreval("bus 1=A ou 2=B")
+           leia(b)
+           escreval("rota 1=A, 2=B ou 3=C")
+           leia(r)
+           escreval("pessoas")       // posicao 0
+           leia(p)
+           escreval("km")            // posicao 1
+           leia(km)
+       // BUS A
+       // 1a   ppl  km
+       // 1b   ppl  km
+       // 1c   ppl  km
+       
+       // BUS B
+       // 2a   ppl  km
+       // 2b   ppl  km
+       // 2c   ppl  km
+
+       se b=1 entao
+          b:=r
+       senao
+          b:=r+3
+       fimse
+       
+         bus[b,1] := p
+         bus[b,2] := km
+         escreval("Terminar? s/n")
+         leia(sair)
+       fimenquanto
+       begin:=1  // para nunca mais pedir os dados de novo
+   fimse
+
+   ///
+   bus[1,1] := 11
+   bus[1,2] := 111
+   bus[2,1] := 12
+   bus[2,2] := 112
+   bus[3,1] := 13
+   bus[3,2] := 113
+   bus[4,1] := 21
+   bus[4,2] := 221
+   bus[5,1] := 22
+   bus[5,2] := 222
+   bus[6,1] := 23
+   bus[6,2] := 223
+   //
+   
+   //mostrar dados guardados
+   para i de 1 ate 6 passo 1 faca
+       se i=1 entao
+          escreval("BUS A:-------")
+       fimse
+       se i=4 entao
+          escreval("BUS B:-------")
+       fimse
+       escreva( bus[i,1])
+       escreval( bus[i,2])
+   fimpara
+   
+   
+   escolha(op) faca
+       caso 1
+             p_media
+       caso 2
+             p_km
+       caso 3
+             res:=f_pessoas
+             escreval("total de pessoas na rotaX:",res)
+       caso 4
+             res:=f_pessoas
+             escreval("rota 1=A, 2=B ou 3=C")
+             leia(rx)
+             res:=f_lucro(rx,res)
+             escreval("total de lucro:",res)
+   fimescolha
+
+FimalgoritmoAlgoritmo "semnome"
+// Disciplina  : [UFCD 0781 - Analise de sistemas]
+// Professor   : Nuno Cunha 
+// Descri��o   : Aqui voc� descreve o que o programa faz! (fun��o)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 06/12/2021
+Var
+// Se��o de Declara��es das vari�veis 
+op,b,r,p,km,i,res,rx: inteiro
+begin: inteiro
+sair: caracter
+bus: vetor [1..6,1..2]de inteiro       // 6 rotas 2A 2B  2C   | ppl e km
+procedimento menu
+inicio
+      escreval("Inserir dados (passo obrigat�rio)  ")
+      escreval("1 � Media de pessoas por rota       ")
+      escreval("2 � Total de km percorridos        ")
+      escreval("3 � quantidade de pessoas numa rota       ")
+      escreval("4 � Determinar o lucro             ")
+fimprocedimento
+//--
+
+
+procedimento p_media
+var
+ro,ppla,pplb,pplc,i,cc,ca,cb: inteiro
+media: real
+
+inicio
+
+       //media:= (ppla + pplb)/2
+        ppla:=0   //inicializar os contadores
+        pplb:=0
+        pplc:=0
+       
+        para i de 1 ate 6 passo 1 faca
+          se (i=1) ou (i=4)entao
+              se  bus[i,0]<>0 entao
+                  ppla:= bus[i,1] + ppla
+                  ca:=ca+1
+              fimse
+          fimse
+          se (i=2) ou (i=5) entao
+               se  bus[i,1]<>0 entao
+                   pplb:= bus[i,0] + pplb
+                   cb:=cb+1
+               fimse
+          fimse
+          se (i=3) ou (i=6) entao
+               se  bus[i,1]<>0 entao
+                   pplc:= bus[i,0] + pplc
+                   cc:=cc+1
+               fimse
+          fimse
+       fimpara
+
+       escreval("rota A  | media=",ppla/ca)
+       escreval("rota B  | media=",pplb/cb)
+       escreval("rota C  | media=",pplc/cc)
+
+fimprocedimento
+
+//---
+procedimento p_km
+var
+ro,kma,kmb,kmc,i,cc,ca,cb: inteiro
+media: real
+
+inicio
+
+
+        kma:=0   //inicializar os contadores
+        kmb:=0
+        para i de 1 ate 6 passo 1 faca
+          se (i<4)entao
+             kma:= bus[i,2] + kma
+          senao
+             kmb:= bus[i,2] + kmb
+          fimse
+        fimpara
+
+       escreval("BUS A  | km=",kma)
+       escreval("BUS B  | km=",kmb)
+
+fimprocedimento
+
+//---
+funcao f_pessoas: inteiro
+var
+rr,i,t_ppl: inteiro
+inicio
+      //limpatela
+      escreval("rota 1=A, 2=B ou 3=C")
+      leia(rr)
+
+      t_ppl:= bus[rr,2] + t_ppl
+      rr:=rr+3
+      t_ppl:= bus[rr,2] + t_ppl
+      //--
+     retorne t_ppl
+
+fimfuncao
+
+//---
+
+funcao f_lucro(rx: inteiro, ppl:inteiro): real
+var
+lucro: real
+inicio
+      //limpatela
+      escolha rx
+        caso 1
+                lucro:= 3*ppl   //rota A
+        caso 2
+                lucro:= 2*ppl   //rota B
+        caso 3
+                lucro:= 1*ppl   //rota C
+      fimescolha
+
+     //--
+     retorne lucro
+
+fimfuncao
+
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+Inicio
+// Se��o de Comandos, procedimento, fun��es, operadores, etc... 
+
+// menu
+   menu
+   leia(op)
+   begin:=1  //para indicar que � a primeira vez --> pedir dados
+   sair:="n"
+   se begin=0 entao
+       enquanto sair="n" faca
+           escreval("bus 1=A ou 2=B")
+           leia(b)
+           escreval("rota 1=A, 2=B ou 3=C")
+           leia(r)
+           escreval("pessoas")       // posicao 0
+           leia(p)
+           escreval("km")            // posicao 1
+           leia(km)
+       // BUS A
+       // 1a   ppl  km
+       // 1b   ppl  km
+       // 1c   ppl  km
+       
+       // BUS B
+       // 2a   ppl  km
+       // 2b   ppl  km
+       // 2c   ppl  km
+
+       se b=1 entao
+          b:=r
+       senao
+          b:=r+3
+       fimse
+       
+         bus[b,1] := p
+         bus[b,2] := km
+         escreval("Terminar? s/n")
+         leia(sair)
+       fimenquanto
+       begin:=1  // para nunca mais pedir os dados de novo
+   fimse
+
+   ///
+   bus[1,1] := 11
+   bus[1,2] := 111
+   bus[2,1] := 12
+   bus[2,2] := 112
+   bus[3,1] := 13
+   bus[3,2] := 113
+   bus[4,1] := 21
+   bus[4,2] := 221
+   bus[5,1] := 22
+   bus[5,2] := 222
+   bus[6,1] := 23
+   bus[6,2] := 223
+   //
+   
+   //mostrar dados guardados
+   para i de 1 ate 6 passo 1 faca
+       se i=1 entao
+          escreval("BUS A:-------")
+       fimse
+       se i=4 entao
+          escreval("BUS B:-------")
+       fimse
+       escreva( bus[i,1])
+       escreval( bus[i,2])
+   fimpara
+   
+   
+   escolha(op) faca
+       caso 1
+             p_media
+       caso 2
+             p_km
+       caso 3
+             res:=f_pessoas
+             escreval("total de pessoas na rotaX:",res)
+       caso 4
+             res:=f_pessoas
+             escreval("rota 1=A, 2=B ou 3=C")
+             leia(rx)
+             res:=f_lucro(rx,res)
+             escreval("total de lucro:",res)
+   fimescolha
+
+Fimalgoritmo
