@@ -1,5 +1,6 @@
 /*
-Escreva uma função chamada "troca" que troca os valores dos parâmetros recebidos. A sua "assinatura" deve ser: void troca(float *a, float *b)
+Escreva uma função chamada "troca" que troca os valores dos parâmetros recebidos. 
+A sua "assinatura" deve ser: void troca(float *a, float *b)
 */
 
 #include <iostream>	
