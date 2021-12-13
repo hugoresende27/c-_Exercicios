@@ -14,19 +14,19 @@ void somasub(int a, int b, int *ptSoma, int *ptSub);
 int main()								
 {
     int a,b;
-    int *pt1;
-    int *pt2;
+    int soma;
+    int sub;
     cout << "Val 1--> ";
     cin >>a;
     cout << "Val 2--> ";
     cin >>b;
     
-    somasub(a,b,pt1,pt2);
+    somasub(a,b,&soma,&sub);    //a função soma vai receber como params a,b, endereco de memoria de &soma e &sub
 
-    cout << "SOMA: "<< *pt1;
-    cout << "SUB:: "<< *pt2;
+    cout << "\nSOMA: "<< soma;  //print da var soma, vai ter o conteudo do *ptSoma = a+b
+    cout << "\nSUB:: "<< sub;
 
-
+    cout << endl;
     system("pause");				
 	return 0;	
 }
