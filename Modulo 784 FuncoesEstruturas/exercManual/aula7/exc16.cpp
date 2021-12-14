@@ -11,12 +11,15 @@ using namespace std;
 
 int exato(int num){
     float res = sqrt(num);
+    cout << "RES sqrt: "<<res<<endl;
     int a = res;
     res = res - a;
-    if (res > 0)
-        return 0;
-    else
+    cout << "RES: "<<res<<endl;
+    cout << "A: "<<a<<endl;
+    if (res == 0)
         return 1;
+    else
+        return 0;
 }
 /*
 void raiz(int n) {
@@ -36,7 +39,7 @@ int main()
     int num;
     cout << "NUM --> ";
     cin >> num;
-    cout << exato(num)<<endl;
+    //cout << exato(num)<<endl;
     if(exato(num)==1){cout<<"Raiz inteira\n";}
     else{cout<<"NÂO é inteira\n";}
 
