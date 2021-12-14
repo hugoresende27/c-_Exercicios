@@ -48,19 +48,19 @@ int main()
     }
 
     /////////////////////////////////• a diagonal principal pela diagonal secundária
-    int aux2=0;
-
+    int temp=0;
+    int aux1=0;
+    int aux2=4;
     for ( int i= 0; i<L; i++){
-        for (int j=0 ; j<C; j++){
-            if (i==j){
-                aux2 = mat[i][j];
-                mat[i][j]=mat[4-i][4-j];
-                mat[4-i][4-j] = aux2;
-            }
-        }
+                temp = mat[aux1][i];
+                mat[aux1][i]=mat[aux2][i];
+                mat[aux2][i] = temp;
+                aux2--;
+                aux1++;
     }
       ////////////////////////////////////////////////////print da matriz
     cout << "diagonal principal pela diagonal secundária\n";
+   
     for ( int i= 0; i<L; i++){
         for (int j=0 ; j<C; j++){
             cout << (mat[i][j])<< " | ";
