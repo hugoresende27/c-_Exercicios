@@ -48,7 +48,7 @@ int main()
 
         if(tab[i].idade>maisVelho){
             indiceMaisVelho = i;    //ao guardar o indice do mais velho na var indiceMaisVelho, posso imprimir
-            maisAlto=tab[i].idade;  //usando o array tab de atletas no indice respetivo
+            maisVelho=tab[i].idade;  //usando o array tab de atletas no indice respetivo
         }
         
         if(tab[i].altura>maisAlto){
