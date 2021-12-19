@@ -8,7 +8,7 @@ o associado (ou os associados) com o maior número de dependentes.
 #include <iostream>	
 #include <string.h>
 #include <math.h>	
-#define MAX 2	
+#define MAX 5	
 using namespace std;
 
 struct dataNasc{
@@ -51,7 +51,7 @@ int main()
     }
     cout << "NOME\t\tDATA\t\tMENS \tDEP\n";
     for (int i=0; i< MAX ; i++){
-        printf ("%s \t| %d - %d - %d | \t %.1f \t %.d\n",
+        printf ("%s \t| %d - %d - %d |  %.1f \t %.d\n",
                 socios[i].nome,
                 socios[i].nasc.ano,
                 socios[i].nasc.mes,
