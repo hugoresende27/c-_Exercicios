@@ -8,7 +8,7 @@ o associado (ou os associados) com o maior número de dependentes.
 #include <iostream>	
 #include <string.h>
 #include <math.h>	
-#define MAX 5	
+#define MAX 2	
 using namespace std;
 
 struct dataNasc{
@@ -22,14 +22,14 @@ struct socio{
     dataNasc nasc;
     float mensalidade;
     int dependentes;
-
-
 };
+
+
 
 int main()								
 {
     socio socios[MAX];
-    int aux=0,indiceMaisDep;
+    int aux=0;//indiceMaisDep;
     for (int i=0; i< MAX ; i++){
         cout << "NOME::";
         scanf("%s", &socios[i].nome);
@@ -45,11 +45,11 @@ int main()
         scanf("%d", &socios[i].dependentes);
         if (socios[i].dependentes>aux){
             aux = socios[i].dependentes;
-            indiceMaisDep = i;
+            //indiceMaisDep = i;
         }
 
     }
-    cout << "NOME\t\tDATA\t\tMENS \tDEP\n";
+    cout << "NOME\t\tDATA\tMENS \tDEP\n";
     for (int i=0; i< MAX ; i++){
         printf ("%s \t| %d - %d - %d |  %.1f \t %.d\n",
                 socios[i].nome,
@@ -61,15 +61,22 @@ int main()
     }
 
     cout << "Socio com mais dependentes:: \n";
-    printf ("%s \t| %d - %d - %d | \t %.1f \t %.d\n",
-                socios[indiceMaisDep].nome,
-                socios[indiceMaisDep].nasc.ano,
-                socios[indiceMaisDep].nasc.mes,
-                socios[indiceMaisDep].nasc.dia,
-                socios[indiceMaisDep].mensalidade,
-                socios[indiceMaisDep].dependentes);
-
+    for (int i=0; i< MAX ; i++){
+        if (socios[i].dependentes == aux){
+              printf ("%s \t| %d - %d - %d |  %.1f \t %.d\n",
+                socios[i].nome,
+                socios[i].nasc.ano,
+                socios[i].nasc.mes,
+                socios[i].nasc.dia,
+                socios[i].mensalidade,
+                socios[i].dependentes);
+        }
+    }
+ 
     cout << endl;
     system("pause");				
 	return 0;	
 }
+
+
+
