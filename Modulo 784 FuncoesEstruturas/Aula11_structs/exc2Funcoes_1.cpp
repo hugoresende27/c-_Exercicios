@@ -7,8 +7,8 @@ Faça um programa que leia o saldo e a percentagem de reajuste de uma aplicaçã
 #include <math.h>		
 using namespace std;
 
-float novoSaldo(float s, float t){
-    return s+(s*t/100);
+float novoSaldo(float *s, float *t){
+    return *s+*s*(*t)/100;
 }
 
 int main()								
@@ -18,7 +18,7 @@ int main()
     cin >> saldo;
     cout << "Qual a taxa?[0-100%] --> ";
     cin >> taxa;
-    cout << "Ajuste:: "<< novoSaldo(saldo,taxa)<<" Euros";
+    cout << "Ajuste:: "<< novoSaldo(&saldo,&taxa)<<" Euros";
     cout << endl;
 
     system("pause");				
