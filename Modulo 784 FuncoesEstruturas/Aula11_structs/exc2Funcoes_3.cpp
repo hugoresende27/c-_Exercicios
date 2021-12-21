@@ -72,16 +72,13 @@ int main()
         cin >>vet[i];
     }
 
-    //imprimeVetor(vet);
-    //ordenavetB(vet);
+   
     copiarVetor(vet,vet2);
+    cout << "Vetor 2->";
     imprimeVetor(vet2);
+    cout << "Vetor 1->";
     imprimeVetor(vet);
 
-
-    //insercao(vet);
-    //imprimeVetor(pt);
-    cout << endl;
     system("pause");				
 	return 0;	
 }
