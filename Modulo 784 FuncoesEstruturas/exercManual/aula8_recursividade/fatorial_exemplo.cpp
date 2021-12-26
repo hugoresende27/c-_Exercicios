@@ -17,9 +17,10 @@ int fatorial(int n){
 
 int fatorialRecursivo(int x){//função recursiva deixa de ter iterações(loop for) para ter recursões
     if (x <= 1){    //instrução de saída da função
+        cout << x<<" = ";
         return 1;
     } else {
-        cout << x <<" | ";
+        cout << x <<" x ";
         return x*fatorialRecursivo(x-1);//função evocada novamente
     }
 }
