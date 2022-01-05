@@ -7,26 +7,32 @@ variável “dir” e em função disso, imprimir no ecrã o seu valor.
 #include <math.h>		
 using namespace std;
 
-enum direcao { norte, sul, este, oeste, centro} dir;
+enum direcao { norte = 1,
+               sul = 2,
+               este = 3,
+               oeste = 4,
+               centro = 5} dir;
 
 int main()								
 {
-    dir = norte;
+    cout << "Qual a direção ? [ 1 | 2 | 3 | 4 | 5] --> ";
+    scanf ("%d", &dir);
+    
     switch (dir)
     {
-    case norte:
+    case 1:
         cout << "NORTE"<<endl;
         break;
-    case sul:
+    case 2:
         cout << "SUL"<<endl;
         break;
-    case este:
+    case 3:
         cout << "ESTE"<<endl;
         break;
-    case oeste:
+    case 4:
         cout << "OESTE"<<endl;
         break;
-    case centro:
+    case 5:
         cout << "CENTRO"<<endl;
         break;
     

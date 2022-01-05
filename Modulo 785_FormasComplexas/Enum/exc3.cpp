@@ -15,6 +15,7 @@ int main()
     cout << "SEXO--> ";
     scanf ("%d" , &s);
 
+
     switch (s)
     {
     case 10:
