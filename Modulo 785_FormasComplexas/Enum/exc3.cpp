@@ -12,6 +12,34 @@ enum sexos {masculino = 10, feminino = 20} s;
 int main()								
 {
 
+    sexos genero;
+    int gen;
+
+    cout << "Valor  ";
+    cin >> gen;
+
+    if (gen == 10) {
+        genero = masculino;
+    } else {
+        genero = feminino;
+    }
+
+    switch (genero)
+    {
+    case 10:
+        cout << "MACHO valor-> "<<genero<<endl;
+        break;
+    case 20:
+        cout << "FEMEA valor-> "<<genero<<endl;
+        break;
+    
+    default:
+        cout << "ERRO"<<endl;
+        break;
+    }
+
+
+/*
     cout << "SEXO--> ";
     scanf ("%d" , &s);
 
@@ -29,6 +57,8 @@ int main()
         cout << "ERROR\n";
         break;
     }
+
+    */
     cout << endl;
     system("pause");				
 	return 0;	
