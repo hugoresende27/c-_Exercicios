@@ -11,7 +11,7 @@ e data de NASCIMENTO.
 using namespace std;
 
 struct info{
-    char endereco[50];
+    char endereco[200];
     int tel;
     int diaN;
     int mesN;
@@ -46,7 +46,8 @@ int main()
         scanf("%d", &lista[i].infos.tel);
         cout << "ENDEREÇO::";
         fflush(stdin);
-        scanf("%s", &lista[i].infos.endereco);
+        //scanf("%s", &lista[i].infos.endereco);
+        fgets(lista[i].infos.endereco,200,stdin);
     }
     cout << "NOME| IDADE|NUM| DATA NASC TEL MORADA\n";
     for (int i=0; i< MAX ; i++){

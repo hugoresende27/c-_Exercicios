@@ -21,6 +21,7 @@ int main()
     cout << "OLA :: "<<x<<endl;
     cout << "OLA :: "<<y<<endl;
     cout << "OLA :: "<<z<<endl;
+    cout << typeof(x);
 
 
     for (int i=a; i<=c;i++){

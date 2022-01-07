@@ -26,6 +26,7 @@ int main()
         break;
     
     default:
+        cout << "ERROR\n";
         break;
     }
     cout << endl;
