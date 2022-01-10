@@ -3,12 +3,9 @@
 #include <math.h>		
 using namespace std;
 
-enum meses{
-    
-}
-
 int main()								
 {
+  
     cout << endl;
     system("pause");				
 	return 0;	

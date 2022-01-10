@@ -20,6 +20,7 @@ enum year {Jan, Feb, Mar, Apr, May, Jun, Jul,
 enum modulos {c,java,php,python} op;
 
 
+
 struct funcionario{
     char nome[20];
     enum departamento{
@@ -31,6 +32,7 @@ struct funcionario{
 
 int main()								
 {
+
 
     op = php;
     cout << "DISC:: "<<op<<endl;
