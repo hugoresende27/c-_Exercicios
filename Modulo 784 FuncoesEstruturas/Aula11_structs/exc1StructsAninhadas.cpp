@@ -23,7 +23,7 @@ struct Data {
 struct Cliente {
     char cod[5];
     char nome[100];
-    int idade;
+    Data dataNasc;
 };
 
 struct Veiculo {
@@ -45,12 +45,10 @@ int main()
 {
 
     Aluguer alugueres[M];
+    int preco;
     cout << "RENT A CAR\n";
 
     for (int i=0; i<M ; i++){
-
-        
-
 
         cout << "ALUGUER :: "<< i+1;
         
@@ -72,8 +70,8 @@ int main()
         cout << "NOME CLIENTE:: ";
         fflush(stdin);
         fgets(alugueres[i].cli.nome,100,stdin);
-        cout << "IDADE:: ";
-        cin >> alugueres[i].cli.idade;
+        cout << "ANO NASCIMENTO:: ";
+        cin >> alugueres[i].cli.dataNasc.ano;
 
         cout << "CODIGO VEICULO:: ";
         fflush(stdin);
@@ -86,25 +84,29 @@ int main()
 
        
         char op;
-        cout << "Qual a categoria de de preco [ A | B | C]--> ";
+        cout << "Qual a categoria de de preco [ A | B | C ]--> ";
         cin>>op;
         switch (toupper (op))
         {
         case 'A':
-            alugueres[i].prc = alugueres[i].A ;  
+            preco = alugueres[i].A ;  
             break;
         case 'B':
-            alugueres[i].prc = alugueres[i].B ;  
+            preco = alugueres[i].B ;  
             break;
         case 'C':
-            alugueres[i].prc = alugueres[i].C ;  
+            preco = alugueres[i].C ;  
             break;
         
         default:
             break;
         }
-        
-       
+
+        int dias=0;
+        cout << "Quantos dias? --> ";
+        cin>> dias;
+        alugueres[i].total = dias * preco;
+
 
     }
 
@@ -113,9 +115,10 @@ int main()
         cout << "\tCOD ALUGUER:: "<<alugueres[i].cod;
         printf ("\tDATA %d / %d / %d \n", alugueres[i].data.dia,alugueres[i].data.mes,alugueres[i].data.ano);
         printf ("\tVEICULO COD: %s \tMARCA: %s \tANO : %d", alugueres[i].vei.cod,alugueres[i].vei.marca,alugueres[i].vei.anoFab);
-        printf ("\n\tCLIENTE COD: %s \tNOME: %s \tIDADE : %d", alugueres[i].cli.cod,alugueres[i].cli.nome,alugueres[i].cli.idade);
+        printf ("\n\tCLIENTE COD: %s \tNOME: %s \tIDADE : %d", alugueres[i].cli.cod,alugueres[i].cli.nome,2022-alugueres[i].cli.dataNasc.ano);
 
-        cout << "PRECO FINAL:: "<<alugueres[i].prc;
+        cout << "\n\tVALOR DIA:: "<<preco<<" €";
+        cout << "\n\tPRECO FINAL:: "<< alugueres[i].total <<" €";
     }
  
     cout << endl;
