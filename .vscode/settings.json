@@ -55,7 +55,8 @@
         "deque": "cpp",
         "list": "cpp",
         "queue": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "string.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
