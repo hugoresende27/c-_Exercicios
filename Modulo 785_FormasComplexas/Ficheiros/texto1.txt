@@ -1,1 +1,3 @@
-aula de c ficheiro de texto com algum texto
+12 10 2022
+hugao
+Resende
