@@ -13,12 +13,28 @@ int main()
     file = fopen ("arrayInteiros.txt", "w");
 
     int inteiros[5];
+    char texto[100];
+
     for (int i=0; i<5;i++){
         cout << i+1<<" -> valor:: ";
         cin >> inteiros[i];
+        fprintf(file,"%d ",inteiros[i]);
+        
     }
-    fputs(inteiros,file);
+    fclose(file);
 
+    //verificação se o ficheiro existe
+    if (file == NULL ){
+        printf ("Falhou abertura do ficheiro");
+    }
+    else {
+        cout << "Ficheiro aberto com sucesso\n";
+        file = fopen ("arrayInteiros.txt", "r");
+        fgets(texto,100, file);
+        puts(texto);
+
+        fclose(file);//cada fopen tem um fclose
+    }
 
     cout << endl;
     system("pause");				
