@@ -12,8 +12,9 @@ void menu(){
     cout << "\n1.LER FICHEIRO\n";
     cout << "2.ESCREVER FICHEIRO\n";
     cout << "3.ACRESCENTAR AO FICHEIRO\n";
-    cout << "5.colocar file no array\n";
-    cout << "4.SAIR\n";
+    cout << "4.COLOCAR FICHEIRO NUM ARRAY\n";
+    cout << "5.ELIMINAR FICHEIRO\n";
+    cout << "0.SAIR\n";
 }
 
 void lerFicheiro(){
@@ -73,35 +74,8 @@ void acrescentarFicheiro(){
         }
 }
 
-int main()								
-{
-  
-    int op;
+void porNoArray(){
 
-do{
-
-    menu();
-    cout<< "opcao--> ";
-    cin>>op;
-    switch (op)
-    {
-    case 1:
-        lerFicheiro();
-        break;
-    
-    case 2:
-        escreverFicheiro();
-        break;
-
-    case 3:
-        acrescentarFicheiro();
-        break;
-        
-    case 4:
-        cout<< "Adeus...";
-        break;
-
-    case 5:
         FILE *file;
   
         int novoArray[5];
@@ -126,13 +100,58 @@ do{
 
             fclose(file);//cada fopen tem um fclose
         }
+}
+
+void delFile(){
+    FILE *file;
+    file =  fopen ("fileV2.txt", "r");
+    delete file;
+    fclose(file);
+
+}
+
+int main()								
+{
+  
+    int op;
+
+do{
+
+    menu();
+    cout<< "opcao--> ";
+    cin>>op;
+    switch (op)
+    {
+    case 0:
+        cout<< "Adeus...";
+        break;
+    case 1:
+        lerFicheiro();
+        break;
+    
+    case 2:
+        escreverFicheiro();
+        break;
+
+    case 3:
+        acrescentarFicheiro();
+        break;
+        
+
+
+    case 4:
+        porNoArray();
+        break;
+    
+    case 5:
+        delFile();
         break;
     default:
         cout << "error...\n";
         break;
     }
 
-}while (op !=4);
+}while (op !=0);
 
     
     cout << endl;

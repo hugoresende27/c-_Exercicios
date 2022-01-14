@@ -57,8 +57,8 @@ void acrescentarFicheiro(){
             printf ("Falhou abertura do ficheiro");
         }
         else {
-            cout << "Ficheiro aberto com sucesso\n";
             
+            cout << "Ficheiro aberto com sucesso\n";           
             int valor=0;
             cout <<" -> valor:: ";
             cin >> valor;
