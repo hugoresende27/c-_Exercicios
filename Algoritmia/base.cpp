@@ -10,8 +10,6 @@ int main()
 
     //setlocale (LC_ALL, "Portuguese");
 
-    
-
     cout << endl;
     system("pause");				
 	return 0;	
