@@ -74,6 +74,8 @@ void acrescentarFicheiro(){
         }
 }
 
+
+
 void porNoArray(){
 
         FILE *file;
