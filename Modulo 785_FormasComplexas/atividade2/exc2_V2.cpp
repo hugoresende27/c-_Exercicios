@@ -93,7 +93,7 @@ void porNoArray(){
                 int temp;
                 fscanf(file,"%d\n", &temp);
                 novoArray[i] = temp;
-                cout <<ftell(file)<<endl;
+                cout <<ftell(file)<<"->";
                 printf ("%d | ",novoArray[i]);
             }
             

@@ -41,13 +41,17 @@ int main()
         fgets(texto,100, file);
         puts(texto);
         fclose(file);
+
+
         file = fopen ("arrayInteiros.txt", "r");
+        int inteirosB[5];
         for (int i=0; i<5; i++){
             int temp;
-            fscanf(file,"%d", temp);
-           
-            cout << temp <<endl;
+            fscanf(file,"%d", &temp);
+            inteirosB[i] = temp;
+            cout << inteirosB[i]<< " - ";
         }
+
 
         fclose(file);//cada fopen tem um fclose
     }
