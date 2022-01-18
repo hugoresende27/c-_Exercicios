@@ -136,7 +136,7 @@ void verificaPremio (int arrApostaChave[],int arrApostaEstr[], int arrGeradoChav
 
 int main()								
 {
-    int chave[7];
+    int chave[7]={0};//={0} para verificar mais abaixo se está vazio
     int estrelas[2];
 
     int chaveSorteada[7];
@@ -165,10 +165,12 @@ int main()
                 imprimeChave(chaveSorteada,estrelasSorteadas);
                 break;
             case 3:
-                if (chave != NULL){
-                     imprimeChave(chave,estrelas);
-                } else {
+                
+                if (chave [0]==0){
                     cout << "Ainda não existe chave!\n";
+                }
+                else{
+                    imprimeChave(chave,estrelas);
                 }
                
                 break;
@@ -177,10 +179,16 @@ int main()
                 imprimeChave(chaveSorteada,estrelasSorteadas);
                 break;
             case 5:
-                geraChave(chaveSorteada,estrelasSorteadas);//se não tiver sido gerada a chave antes vai sempre gerar aqui nova chave
-                imprimeChave(chave,estrelas);
-                imprimeChave(chaveSorteada,estrelasSorteadas);
-                verificaPremio(chave,estrelas,chaveSorteada,estrelasSorteadas);
+                if (chave [0]==0){
+                    cout << "Ainda não existe chave!\n";
+                } else {
+                    geraChave(chaveSorteada,estrelasSorteadas);//se não tiver sido gerada a chave antes vai sempre gerar aqui nova chave
+                    cout<<"chave jogada\n";
+                    imprimeChave(chave,estrelas);
+                    cout<<"chave sorteada\n";
+                    imprimeChave(chaveSorteada,estrelasSorteadas);
+                    verificaPremio(chave,estrelas,chaveSorteada,estrelasSorteadas);
+                }
                 break;
             
             default:
