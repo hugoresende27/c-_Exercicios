@@ -56,7 +56,8 @@
         "list": "cpp",
         "queue": "cpp",
         "stack": "cpp",
-        "string.h": "c"
+        "string.h": "c",
+        "forward_list": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
