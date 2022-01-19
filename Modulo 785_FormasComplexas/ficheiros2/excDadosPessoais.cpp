@@ -75,8 +75,8 @@ int main()
         // strcpy(p1.prof,texto);
         
         fgets(p1.nome,sizeof(p1.nome),file) ;
-        fgets(p1.idade,sizeof(p1.nome),file) ;
-        fgets(p1.prof,sizeof(p1.nome),file) ;
+        fgets(p1.idade,sizeof(p1.idade),file) ;
+        fgets(p1.prof,sizeof(p1.prof),file) ;
 
         cout << "1."<<p1.nome;
         cout << "2."<<p1.idade;

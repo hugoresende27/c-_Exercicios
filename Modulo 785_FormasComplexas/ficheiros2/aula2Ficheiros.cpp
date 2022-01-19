@@ -31,9 +31,6 @@ void lerFicheiro(){
 
 void escreverFicheiro(){
 
-    
-    
-    
     file = fopen (ficheiroAtual, "w");
    
     for (int i=0; i<3;i++){
