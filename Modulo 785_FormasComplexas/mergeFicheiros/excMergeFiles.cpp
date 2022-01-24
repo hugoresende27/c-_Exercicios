@@ -5,18 +5,69 @@
 #include <fstream>
 using namespace std;
 
+
+void x_files(FILE *pt1, FILE *pt2, FILE *pt3 = NULL){
+
+    FILE *ptFinal = fopen("mergeFun2.txt", "w");
+    char linha[100];
+
+    if (pt1 == NULL){
+        printf ("Falhou abertura do ficheiro numeros\n");
+        system("pause");
+        exit(0);
+    }
+    if (pt2 == NULL){
+        printf ("Falhou abertura do ficheiro vendas\n");
+        system("pause");
+        exit(0);
+    }
+      else {
+        while (1){
+            if (feof(pt1)){//verificação fim do ficheiro
+                break;
+            }         
+            fgets(linha, sizeof(linha), pt1);
+            fputs(linha,ptFinal);
+        };
+        fputs("\n \t\t --- OUTRO FICHEIRO ----- \t\t\n",ptFinal);
+        while (1){
+            if (feof(pt2)){//verificação fim do ficheiro
+                break;
+            }      
+            fgets(linha, sizeof(linha), pt2);
+            fputs(linha,ptFinal);
+        };
+        fputs("\n \t\t --- OUTRO FICHEIRO ----- \t\t\n",ptFinal);
+        while (1){
+            if (feof(pt3)){//verificação fim do ficheiro
+                break;
+            }      
+            fgets(linha, sizeof(linha), pt3);
+            fputs(linha,ptFinal);
+        };
+     
+        cout << "Ficheiro mergeFun2 criado com sucesso \n";
+    
+    };
+    fclose(pt1);
+    fclose(pt2);
+    fclose(ptFinal);
+}
+
 int main()								
 {
 
-    FILE *file1,*file2,*fileMerge;
+    FILE *file1,*file2,*file3,*fileMerge;
 
     file1 = fopen("numeros.txt", "r");
     file2 = fopen("vendas.txt", "r");
+    file3 = fopen("numeros.txt", "r");
     fileMerge = fopen("mergeFile.txt", "w");
 
-    char linha[100];
+    x_files(file1,file2,file3);
 
-   
+/*
+    char linha[100];
 
     if (file1 == NULL){
         printf ("Falhou abertura do ficheiro numeros\n");
@@ -51,7 +102,7 @@ int main()
     
     }
   
-
+*/
     cout << endl;
     system("pause");				
 	return 0;	

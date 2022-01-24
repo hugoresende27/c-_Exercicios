@@ -17,7 +17,7 @@ int main()
     FILE *file,*fileCriado;
 
     file = fopen("vendas.txt", "r");
-    fileCriado = fopen("vendasCopia.txt", "w");
+    fileCriado = fopen("vendasCopia2.txt", "w");
 
     if (file == NULL ){
         printf ("Falhou abertura do ficheiro");
