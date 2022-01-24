@@ -1,0 +1,3 @@
+ ID  | Marca | Modelo | Cor | 
+ 
+ 1 | a | a | c | 
