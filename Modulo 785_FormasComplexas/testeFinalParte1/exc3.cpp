@@ -27,13 +27,11 @@ int main()
 {
     FILE *file;
     modalidade m1;
-
-    
-    file = fopen ("modalidades.txt", "w");
+   
+    file = fopen ("modalidades.txt", "a");
 
     string label[] = {"Id: ", "Nome: ", "Praticantes: ", "Medalhas: "};
     
-
     char texto[100];
     char item[100] = {};
 
@@ -46,8 +44,7 @@ int main()
         fgets(texto,sizeof(texto),stdin);
         strcat(strcpy(item, label[i].c_str()),texto);        
         fputs(item,file);
-    }
-        
+    }     
     fclose(file);
 
     cout << endl;

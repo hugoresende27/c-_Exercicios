@@ -33,7 +33,7 @@ int main()
                 soma += temp;
             }     
             media = soma / MAX;
-            cout << "\n\tMédia de idades --> "<<media<<endl;
+            cout << "\n\tMédia de idades --> "<<media<<" anos"<<endl;
         fclose(file);
         }
 

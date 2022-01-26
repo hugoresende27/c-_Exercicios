@@ -1,0 +1,7 @@
+A programação é a arte da criação (ou alteração) de um programa de computador, um conjunto concreto de instruções para um computador desempenhar. Computador, neste contexto, significa qualquer coisa que tenha capacidade de processamento. O programa é escrito numa linguagem de programação, embora seja possível, com alguma dificuldade, escrevê-lo directamente em linguagem de máquina. Diferentes partes de um programa podem ser escritas em diferentes linguagens.
+
+Diferentes linguagens de programação funcionam de diferentes modos. Por esse motivo, os programadores podem criar programas muito diferentes para diferentes linguagens; muito embora, teoricamente, a maioria das linguagens possa ser usada para criar qualquer programa. Para mais informações sobre estes métodos, veja Linguagem de programação.
+
+Software é um nome colectivo para programas de computadores e dados.
+
+Há várias décadas que se debate ferozmente sobre se a programação é mais semelhante a uma arte (Donald Knuth), a uma ciência, à matemática (Edsger Dijkstra), à engenharia (David Parnas), ou se é um campo completamente novo.
