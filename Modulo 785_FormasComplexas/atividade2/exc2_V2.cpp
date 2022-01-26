@@ -21,7 +21,7 @@ void lerFicheiro(){
 
         FILE *file;
         char texto[100];
-
+        int x;
         file = fopen ("fileV2.txt", "r");
             //verificação se o ficheiro existe
             if (file == NULL ){
@@ -29,12 +29,16 @@ void lerFicheiro(){
             }
             else {
                 cout << "Ficheiro aberto com sucesso\n";    
+                /*
                 for (int i=0; i<5; i++){
                     int temp;
                     fscanf(file,"%d\n", &temp);
                     cout << temp <<endl;
                 }    
-               
+               */    
+        while (file != feof) {
+            printf ("%d",x);
+        };
 
                 fclose(file);//cada fopen tem um fclose
             }
@@ -44,13 +48,16 @@ void escreverFicheiro(){
 
     FILE *file; 
     int inteiros[5];
-
+    char texto[100];
     file = fopen ("fileV2.txt", "w");
+    
         for (int i=0; i<5;i++){
             cout << i+1<<" -> valor:: ";
             cin >> inteiros[i];
             fprintf(file,"%d\n",inteiros[i]); 
         }
+        
+     
         fclose(file);
 }
 

@@ -20,10 +20,10 @@ void lerFicheiro(){
                 cout << "Ficheiro aberto com sucesso\n";
                 
                 
-                do {
+                while (fgets(texto,100,file) != NULL) {
                     fgets(texto,sizeof(texto), file);
                     puts(texto);
-                }while (fgets(texto,100,file) != NULL);
+                };
                 cout<<"POS:: "<<ftell(file)<<"FSEEK::"<<fseek(file,100,100);
                 fclose(file);//cada fopen tem um fclose
             }
