@@ -8,6 +8,7 @@ struct dataNasc{
     int diaN;
     int mesN;
     int anoN;
+    dataNasc xx;
 
 };
 
