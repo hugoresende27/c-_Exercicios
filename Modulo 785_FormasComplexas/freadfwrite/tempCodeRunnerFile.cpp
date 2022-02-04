@@ -1,0 +1,1 @@
+fread(&frase, sizeof(char),100,file);
